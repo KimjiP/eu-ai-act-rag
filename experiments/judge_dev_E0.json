@@ -1,0 +1,370 @@
+{
+  "split": "dev",
+  "metrics": {
+    "answer_relevance": 0.9066666666666666,
+    "faithfulness": 0.9766666666666667,
+    "factual_consistency": 0.9966666666666666
+  },
+  "per_query": [
+    {
+      "query_id": "q002",
+      "query": "As a product manager, what types of misuse scenarios do I need to consider when conducting risk assessment for our high-risk AI system?",
+      "answer_relevance": 0.7,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer thoroughly addresses the regulatory framework and requirements for considering misuse scenarios under the EU AI Act, but falls short by not providing concrete examples or practical categories of misuse types that a product manager could actually apply to their risk assessment.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to specific articles and paragraphs.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Articles 6, 8, and 9 of the EU AI Act."
+      }
+    },
+    {
+      "query_id": "q006",
+      "query": "As a compliance officer, I need to know: does our AI system violate Article 5 if it uses behavioral data to create user profiles that might influence purchasing decisions, even if users are aware of the profiling?",
+      "answer_relevance": 0.85,
+      "faithfulness": 0.85,
+      "factual_consistency": 0.95,
+      "reasoning": {
+        "answer_relevance": "The answer directly addresses the core question by explaining that user awareness alone does not exempt the system from Article 5 violations, and provides the specific legal criteria (material distortion, informed decision-making, significant harm) that determine compliance, though it appropriately acknowledges gaps in regulatory guidance for definitive determination.",
+        "faithfulness": "The answer is largely faithful to the context, accurately citing Article 5(1)(a) and its key elements. However, it makes one unsupported claim about user awareness being 'relevant but not necessarily determinative' and another about what would 'likely not violate' the regulation, both of which go beyond what the context explicitly states.",
+        "factual_consistency": "The answer is factually consistent with the provided context passages, accurately citing Article 5(1)(a) and its requirements, though it appropriately notes that detailed guidance on 'significant harm' thresholds is not contained in the provided text."
+      }
+    },
+    {
+      "query_id": "q007",
+      "query": "Who is responsible for entering data from Annex VIII Section A and B into the EU database?",
+      "answer_relevance": 0.9,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and completely identifies the responsible parties (provider or authorised representative) with proper legal citation, and provides relevant context about registration obligations and exceptions, though it could have been slightly more concise.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, including the responsibility of providers/authorised representatives for data entry, registration obligations, and the special requirements for sensitive AI systems.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages, including the identification of responsible parties, registration obligations, and the special provisions for sensitive areas."
+      }
+    },
+    {
+      "query_id": "q009",
+      "query": "What risks is human oversight supposed to prevent in high-risk AI systems?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by identifying the primary risks (health, safety, fundamental rights), specific operational risks (anomalies/dysfunctions and automation bias), and providing direct citations to the EU AI Act that substantiate each point with appropriate regulatory specificity.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to Articles 14 and 13.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Articles 13 and 14 of the EU AI Act."
+      }
+    },
+    {
+      "query_id": "q010",
+      "query": "As a product manager, what should our high-risk AI system enable human overseers to do regarding automation bias?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and comprehensively addresses the question by specifying exactly what human overseers must be enabled to do regarding automation bias under the EU AI Act, with precise regulatory citations and four supporting capabilities that contextualize the core requirement.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate quotations and proper article citations from Article 14 of the EU AI Act.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Article 14 of the EU AI Act, with accurate quotations and proper attribution."
+      }
+    },
+    {
+      "query_id": "q011",
+      "query": "What are the required components of a quality management system for high-risk AI systems?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by providing all 13 required components of a quality management system for high-risk AI systems under the EU AI Act, with proper article citations, clear organization, and appropriate context about proportionality and implementation.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, specifically Article 17 of the EU AI Act, with accurate citations and complete fidelity to the source material.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the provided context passages from Article 17 of the EU AI Act, with accurate citations and no contradictions."
+      }
+    },
+    {
+      "query_id": "q012",
+      "query": "How does the quality management system requirement relate to risk management and post-market monitoring obligations?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by clearly explaining how the quality management system requirement integrates with both risk management and post-market monitoring obligations under the EU AI Act, with specific article citations, detailed requirements, and relevant contextual information including proportionality and sectoral exceptions.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to specific articles and paragraphs.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the provided context passages and accurately reflect the regulatory requirements without contradictions."
+      }
+    },
+    {
+      "query_id": "q013",
+      "query": "What information must be included in the instructions for use of high-risk AI systems?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by directly citing the EU AI Act and providing a complete, well-organized breakdown of all mandatory information elements (a-f) that must be included in instructions for use of high-risk AI systems, with only minor room for additional context on implementation nuances.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, specifically Article 13 of the EU AI Act, with accurate citations and complete fidelity to the source material.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the provided context passages, specifically Article 13 of the EU AI Act, with accurate citations and no contradictions."
+      }
+    },
+    {
+      "query_id": "q015",
+      "query": "What are the transparency requirements when an AI system interacts directly with people?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by detailing the primary disclosure obligation, exemptions, timing requirements, and additional high-risk system requirements with specific article citations, directly and completely covering transparency requirements for AI systems interacting with people.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages from Article 50, Article 13, and the regulatory framework cited.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Article 50 and Article 13 of the EU AI Act."
+      }
+    },
+    {
+      "query_id": "q016",
+      "query": "Our chatbot is clearly labeled as 'AI Assistant' in the interface - do we still need to inform users they're interacting with AI?",
+      "answer_relevance": 0.9,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and comprehensively addresses the question by citing the relevant regulatory standard (Article 50(1)), explaining the 'obvious' exception, providing concrete factors to evaluate compliance, and appropriately noting when the exception does not apply.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, specifically Article 50(1), Article 50(5), and the exception clause regarding law enforcement.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages, particularly Article 50(1) and Article 50(5)."
+      }
+    },
+    {
+      "query_id": "q017",
+      "query": "What's the purpose of keeping logs for AI systems under the EU AI Act?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by identifying all primary purposes of logging under the EU AI Act (risk identification, post-market monitoring, operational monitoring, and traceability) with specific article citations, and includes relevant retention requirements, with only minor room for additional context on enforcement or competent authority access.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages from Articles 12 and 19 of the EU AI Act.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Articles 12 and 19 of the EU AI Act."
+      }
+    },
+    {
+      "query_id": "q019",
+      "query": "How does the EU AI Act balance innovation promotion with protection of fundamental rights and what regulatory mechanisms does it establish to achieve this balance?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses both components of the question\u2014how the EU AI Act balances innovation with fundamental rights protection and the specific regulatory mechanisms it establishes\u2014with detailed, well-sourced explanations of sandboxes, risk-based approaches, R&D exemptions, and support measures, though it could have briefly discussed potential tensions or trade-offs in this balance.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate quotations and proper article citations throughout.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from the EU AI Act Articles 1 and 58."
+      }
+    },
+    {
+      "query_id": "q021",
+      "query": "As a compliance officer, I need to understand: what is the legal distinction between a provider and a deployer of an AI system?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and comprehensively addresses the question by providing clear legal definitions of both provider and deployer from the EU AI Act, explicitly stating the key distinction between them (development/placement vs. use), and including important nuances about when deployers can become providers\u2014fully meeting the compliance officer's need to understand this legal distinction.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, including the definitions of provider and deployer, the key distinction between them, the circumstances under which deployers become providers, and the classification of both as operators.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Articles 3, 13, and 25 of the EU AI Act."
+      }
+    },
+    {
+      "query_id": "q022",
+      "query": "What conformity assessment procedures must notified bodies follow when verifying high-risk AI systems?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by detailing the specific conformity assessment procedures from Article 43, the two available options for providers, mandatory conditions for notified body involvement, and operational requirements notified bodies must follow, with only minor room for additional detail on specific technical documentation requirements.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages from Articles 31, 34, and 43.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Articles 31, 34, and 43."
+      }
+    },
+    {
+      "query_id": "q023",
+      "query": "What regulation governs the process for requesting harmonised standards from European standardisation organisations?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and completely identifies the governing regulation (EU No 1025/2012) with specific article citations, explains the process for requesting harmonised standards, and includes relevant procedural requirements, with only a minor caveat that it could have briefly defined what 'harmonised standards' means in this context.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, including the regulatory framework, the specific articles cited, and the procedural requirements described.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the provided context passages and contain no contradictions with the source material."
+      }
+    },
+    {
+      "query_id": "q024",
+      "query": "What is the scope limitation for high-risk AI systems that fall under existing Union harmonisation legislation, and which specific articles still apply?",
+      "answer_relevance": 0.85,
+      "faithfulness": 0.85,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly addresses the scope limitation and identifies the specific articles that apply (Articles 6(1), 102-109, and 112), with clear reference to Section B of Annex I and Article 2(2), though it could have been more explicit about the rationale for why only these articles apply or provided slightly more detail on what each article covers.",
+        "faithfulness": "The answer is largely faithful to the context, with all major claims directly supported by the provided passages. However, one claim about Section A of Annex I lacks explicit support in the given context.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages, particularly Article 2(2) and Article 8(2)."
+      }
+    },
+    {
+      "query_id": "q025",
+      "query": "What is the relationship between post-market monitoring obligations and the risk management system requirements?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the relationship between post-market monitoring and risk management system requirements by identifying four key integration points with specific regulatory citations, demonstrating how these components are interconnected and mutually reinforcing within the EU AI Act framework.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to Articles 9, 17, and 72 of the EU AI Act.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the provided context passages and accurately represent the regulatory requirements in Articles 9, 17, and 72 of the EU AI Act."
+      }
+    },
+    {
+      "query_id": "q027",
+      "query": "Does the EU AI Act apply to AI providers located outside the European Union?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and comprehensively addresses the question by clearly stating that the EU AI Act applies to non-EU providers, providing specific article citations, explaining the exact circumstances of applicability, and noting relevant exceptions.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to Article 2(1)(a), Article 2(1)(c), Article 2(3), and Article 2(4).",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages, with accurate citations to Article 2(1)(a), Article 2(1)(c), Article 2(3), and Article 2(4)."
+      }
+    },
+    {
+      "query_id": "q028",
+      "query": "I'm an importer bringing AI systems into the EU market. Do I have any obligations under this regulation?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by clearly confirming importer obligations under the EU AI Act, providing seven detailed categories of obligations with specific article references, explaining the definition of 'importer,' and appropriately disclaiming it as informational rather than legal advice.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to Articles 23 and 3 of the EU AI Act regulation.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Articles 23, 24, and 3 of the EU AI Act regulation."
+      }
+    },
+    {
+      "query_id": "q029",
+      "query": "Who qualifies as an 'operator' under the EU AI Act and what roles does this term encompass?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by providing the definition of 'operator' under the EU AI Act, citing the specific article, and thoroughly explaining each of the five constituent roles (provider, deployer, authorised representative, importer, and distributor) with detailed definitions and article references, leaving virtually no aspect of the question unaddressed.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to Article 3 definitions and proper quotations from the source material.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the provided context passages, with accurate citations to Article 3 definitions and no contradictions."
+      }
+    },
+    {
+      "query_id": "q031",
+      "query": "Under what circumstances must an authorised representative provide access to system logs, and are there any limitations on this obligation?",
+      "answer_relevance": 0.9,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses both parts of the question by clearly identifying the specific circumstances requiring log access (competent authority requests for high-risk AI systems), citing relevant articles, and explicitly detailing the key limitation (control requirement), with only minor room for additional nuance on enforcement mechanisms or practical application scenarios.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, specifically Article 47(c) which details the obligations of authorised representatives regarding high-risk AI systems and log access.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the provided context passages, particularly Article 47(c), which explicitly addresses log access obligations for high-risk AI systems with the control limitation accurately cited."
+      }
+    },
+    {
+      "query_id": "q033",
+      "query": "As a compliance officer, what are the specific categories of rules and obligations established by the EU AI Act that our organization needs to be aware of?",
+      "answer_relevance": 0.85,
+      "faithfulness": 0.95,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly addresses the question by identifying and explaining specific categories of EU AI Act obligations (transparency, general-purpose AI models, national authority requirements, and codes of practice) with appropriate article citations and details, though it appropriately acknowledges gaps in the provided text rather than claiming completeness.",
+        "faithfulness": "Nearly all claims are directly supported by the context passages. One minor claim about 'other major obligation categories' is appropriately hedged as not being in the provided excerpts, and the answer correctly notes the limitations of the source material.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages; no contradictions or unsupported assertions are present."
+      }
+    },
+    {
+      "query_id": "q034",
+      "query": "What fundamental values beyond just safety does the AI Act aim to protect?",
+      "answer_relevance": 0.9,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by identifying multiple fundamental values beyond safety (fundamental rights, workers' rights, privacy, and protection of vulnerable populations) with specific article citations and direct textual support from the AI Act.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to Articles 7 and 2 of the EU AI Act.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the provided context passages with no contradictions or unsupported assertions."
+      }
+    },
+    {
+      "query_id": "q036",
+      "query": "If our AI-enabled product falls under both the AI Act and existing EU product safety laws, who is responsible for ensuring full compliance with all applicable requirements?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and comprehensively addresses the question by clearly identifying providers as responsible parties, citing relevant legal articles, explaining the flexibility in compliance approaches, and addressing the complementary nature of overlapping regulations with appropriate specificity and nuance.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to Articles 8, 25, and Recital 64.",
+        "factual_consistency": "The answer accurately reflects the context passages, correctly citing Article 8(2) regarding provider responsibility for full compliance with all applicable requirements, accurately describing the flexibility in compliance approaches, and properly explaining the complementary nature of the AI Act with existing Union harmonisation legislation as stated in Recital 64."
+      }
+    },
+    {
+      "query_id": "q038",
+      "query": "Do we need to keep logs for our high-risk AI system and what should they include?",
+      "answer_relevance": 0.85,
+      "faithfulness": 0.85,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and comprehensively addresses both parts of the question (whether logs are needed and what they should include), providing specific regulatory citations, retention periods, and acknowledging limitations in available specifications, though it could have been slightly more detailed on the actual log content requirements.",
+        "faithfulness": "The answer is largely faithful to the context, with all major claims about log retention periods, provider obligations, and financial institution requirements directly supported. However, one claim about Article 12(1) being referenced in Article 19(1) is not explicitly stated in the provided passages.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the provided context passages with no contradictions or unsupported assertions."
+      }
+    },
+    {
+      "query_id": "q039",
+      "query": "As a compliance officer, what documentation requirements exist regarding accuracy metrics for high-risk AI systems?",
+      "answer_relevance": 0.85,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly addresses the question by providing specific EU AI Act documentation requirements for accuracy metrics in high-risk AI systems, including declaration obligations, instructions for use content, format requirements, and performance specifications, though it could have briefly mentioned additional requirements like technical documentation or conformity assessment records for complete comprehensiveness.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to Articles 15 and 13 of the EU AI Act.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Articles 15 and 13 of the EU AI Act."
+      }
+    },
+    {
+      "query_id": "q040",
+      "query": "If harmonized standards don't fully cover the requirements in Section 2, what does our quality management system need to address?",
+      "answer_relevance": 0.9,
+      "faithfulness": 0.95,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and comprehensively addresses the question by clearly explaining that the QMS must document alternative means of compliance, justify the approach, and follow appropriate conformity assessment procedures when harmonized standards don't fully cover Section 2 requirements, with specific regulatory citations and practical implementation guidance.",
+        "faithfulness": "All major claims are directly supported by the provided context passages. The answer accurately cites Article 17(1)(e), Article 10(5), and Article 43(1) with appropriate quotations and correctly explains the requirements for quality management systems when harmonized standards do not fully cover Section 2 requirements.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Articles 17, 10, and 43 of the EU AI Act."
+      }
+    },
+    {
+      "query_id": "q041",
+      "query": "If our company deploys a high-risk AI system but the logs are stored and controlled by our cloud infrastructure provider, are we still responsible for maintaining those logs under Article 19?",
+      "answer_relevance": 0.7,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly addresses the core question by citing Article 19's 'control' limitation and concluding that responsibility may not apply if logs are exclusively controlled by the cloud provider, but it misses the critical distinction between 'providers' and 'deployers' of AI systems, which could significantly affect the company's actual obligations.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, accurately quoting Articles 19 and 21, and appropriately noting what the regulatory text does not address.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the provided context passages; the answer accurately cites Article 19(1) and Article 21(2) regarding the 'to the extent such logs are under their control' limitation, and correctly identifies that the regulatory text does not provide guidance on what constitutes 'control' or alternative compliance mechanisms."
+      }
+    },
+    {
+      "query_id": "q042",
+      "query": "If our company is based in the US but wants to sell AI products in the EU, do we need an authorised representative?",
+      "answer_relevance": 0.9,
+      "faithfulness": 0.85,
+      "factual_consistency": 0.95,
+      "reasoning": {
+        "answer_relevance": "The answer directly and comprehensively addresses the question by confirming the requirement for an authorised representative, providing specific legal citations, detailing the representative's responsibilities, and noting important exceptions for general-purpose AI models.",
+        "faithfulness": "Nearly all claims are directly supported by the context passages. One claim about importers verifying the appointment of an authorised representative is slightly ambiguous in its framing, as the context shows this is a requirement for importers but the answer presents it as something importers must verify about the provider.",
+        "factual_consistency": "The answer is largely consistent with the context passages, accurately citing Article 22(1) and describing the authorised representative requirements for third-country providers of high-risk AI systems. However, there is a minor inconsistency regarding which article specifies the tasks of the authorised representative."
+      }
+    },
+    {
+      "query_id": "q043",
+      "query": "As a compliance officer, what documentation flexibility do we have when our product contains a high-risk AI system and is already subject to other EU harmonisation legislation?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by directly citing the EU AI Act provisions on documentation flexibility (Articles 8(2) and 11), covering integration of processes, single technical documentation requirements, SME simplifications, and provider responsibilities with appropriate specificity and regulatory accuracy.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to specific articles and paragraphs.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Articles 8 and 11 of the EU AI Act."
+      }
+    }
+  ]
+}

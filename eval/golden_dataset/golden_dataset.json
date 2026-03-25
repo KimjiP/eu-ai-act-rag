@@ -1,0 +1,1201 @@
+[
+  {
+    "query_id": "q001",
+    "query": "What are the four steps that must be included in a risk management system for high-risk AI systems?",
+    "query_type": "factual",
+    "difficulty": "easy",
+    "persona": "compliance_officer",
+    "split": "test",
+    "relevant_chunk_ids": [
+      "696e3da556910bd34740d09cf3fbdacf231246fdf86f207577bc79d368abddda"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Identification and analysis of known and reasonably foreseeable risks to health, safety or fundamental rights",
+      "The passage is incomplete and does not provide all four steps",
+      "Risk management must be a continuous iterative process throughout the entire lifecycle",
+      "Regular systematic review and updating is required"
+    ],
+    "acceptable_citation_targets": [
+      "Article 9(2)",
+      "Article 9(2)(a)",
+      "Article 9(2)(b)",
+      "Article 9(2)(c)",
+      "Article 9(2)(d)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 9"
+  },
+  {
+    "query_id": "q002",
+    "query": "As a product manager, what types of misuse scenarios do I need to consider when conducting risk assessment for our high-risk AI system?",
+    "query_type": "procedural",
+    "difficulty": "medium",
+    "persona": "product_manager",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "696e3da556910bd34740d09cf3fbdacf231246fdf86f207577bc79d368abddda",
+      "b624544dca557367dbf59b8e0a67d88af07b7458786a43fe7e6f6d7ed06110bf"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Risk management system must identify and analyze reasonably foreseeable risks to health, safety, or fundamental rights",
+      "Human oversight design should prevent or minimize risks that may emerge under conditions of reasonably foreseeable misuse",
+      "Risk assessment should consider both intended purpose use and conditions of reasonably foreseeable misuse scenarios",
+      "The risk management process is continuous and iterative throughout the entire lifecycle of the high-risk AI system"
+    ],
+    "acceptable_citation_targets": [
+      "Article 9(2)(b)",
+      "Article 9(2)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 9"
+  },
+  {
+    "query_id": "q003",
+    "query": "Which committee must the Commission inform before drafting implementing acts for common specifications?",
+    "query_type": "cross_reference",
+    "difficulty": "easy",
+    "persona": "compliance_officer",
+    "split": "test",
+    "relevant_chunk_ids": [
+      "ac0d3f1ce1b450e4f436a8f184feaceed7ef4ddcd9b11a0d379402466d40ba95",
+      "46429198c69f8adae0fc8522feaff88f97c2dc897ed72a40a876fbe86458d293"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "The specific committee that must be informed before drafting implementing acts",
+      "The procedural requirement or notification process required by the Commission",
+      "Reference to the relevant article or regulation governing this committee notification"
+    ],
+    "acceptable_citation_targets": [
+      "Article 10(2)",
+      "Article 22 of Regulation (EU) No 1025/2012"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 10"
+  },
+  {
+    "query_id": "q004",
+    "query": "What happens to common specifications once harmonised standards are published in the Official Journal?",
+    "query_type": "procedural",
+    "difficulty": "hard",
+    "persona": "product_manager",
+    "split": "test",
+    "relevant_chunk_ids": [
+      "46429198c69f8adae0fc8522feaff88f97c2dc897ed72a40a876fbe86458d293",
+      "ac0d3f1ce1b450e4f436a8f184feaceed7ef4ddcd9b11a0d379402466d40ba95",
+      "a9446ec83d34a7c077d9e8b56ed21bc5c6ee4bf544b265a15939f04de923d943"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "The relationship between common specifications and harmonised standards once standards are published",
+      "Whether common specifications are superseded, replaced, or remain in effect alongside harmonised standards",
+      "The legal hierarchy or priority between common specifications and published harmonised standards"
+    ],
+    "acceptable_citation_targets": [
+      "Article 10(4)",
+      "Article 10"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 10"
+  },
+  {
+    "query_id": "q005",
+    "query": "What AI practices are prohibited under Article 5 of the EU AI Act?",
+    "query_type": "factual",
+    "difficulty": "easy",
+    "persona": "general",
+    "split": "test",
+    "relevant_chunk_ids": [
+      "f044c9c59f44227c622aadcec0ce90437278381e10c43ef3f7bccc74c0f57e84"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Prohibition of AI systems deploying subliminal techniques beyond a person's consciousness",
+      "Prohibition of purposefully manipulative or deceptive techniques",
+      "The objective or effect must materially distort behavior by impairing ability to make informed decisions",
+      "The prohibited practices must cause or be reasonably likely to cause a person to take a decision they would not have otherwise taken"
+    ],
+    "acceptable_citation_targets": [
+      "Article 5(1)",
+      "Article 5(1)(a)",
+      "Article 5(1)(b)",
+      "Article 5(1)(c)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 5"
+  },
+  {
+    "query_id": "q006",
+    "query": "As a compliance officer, I need to know: does our AI system violate Article 5 if it uses behavioral data to create user profiles that might influence purchasing decisions, even if users are aware of the profiling?",
+    "query_type": "conceptual",
+    "difficulty": "medium",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "f044c9c59f44227c622aadcec0ce90437278381e10c43ef3f7bccc74c0f57e84"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Article 5 prohibits AI systems that deploy subliminal techniques beyond consciousness or purposefully manipulative/deceptive techniques",
+      "The prohibition applies when techniques materially distort behavior by impairing ability to make informed decisions",
+      "User awareness of profiling alone does not exempt a system from Article 5 if the techniques are subliminal, manipulative, or deceptive in nature",
+      "The key distinction is whether the system uses subliminal or deceptive methods, not merely whether data collection is transparent"
+    ],
+    "acceptable_citation_targets": [
+      "Article 5(1)(a)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 5"
+  },
+  {
+    "query_id": "q007",
+    "query": "Who is responsible for entering data from Annex VIII Section A and B into the EU database?",
+    "query_type": "factual",
+    "difficulty": "easy",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "a014aa3a1c1fa814e76ade89c6be7d3cc39e6d238253147c259e6c15e09be585"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "The provider is responsible for entering data from Annex VIII Sections A and B",
+      "The authorised representative may enter the data where applicable",
+      "This data must be entered into the EU database referred to in Article 71"
+    ],
+    "acceptable_citation_targets": [
+      "Article 6(2)",
+      "Annex VIII"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 6"
+  },
+  {
+    "query_id": "q008",
+    "query": "As a product manager, do I need to make all information in the EU database publicly accessible when I register my AI system?",
+    "query_type": "conceptual",
+    "difficulty": "medium",
+    "persona": "product_manager",
+    "split": "test",
+    "relevant_chunk_ids": [
+      "a014aa3a1c1fa814e76ade89c6be7d3cc39e6d238253147c259e6c15e09be585",
+      "ae7b6cb383ec138ab9fb827a15ed208b84640bf2d531a86550e9e0a95d733f10"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Registration requirements for high-risk AI systems in the EU database",
+      "Data entry obligations for providers and deployers under Annex VIII",
+      "Public accessibility or confidentiality rules for registered information"
+    ],
+    "acceptable_citation_targets": [
+      "Article 6(4)",
+      "Article 49",
+      "Article 60"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 6"
+  },
+  {
+    "query_id": "q009",
+    "query": "What risks is human oversight supposed to prevent in high-risk AI systems?",
+    "query_type": "factual",
+    "difficulty": "easy",
+    "persona": "general",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "b624544dca557367dbf59b8e0a67d88af07b7458786a43fe7e6f6d7ed06110bf",
+      "ab61cfe3ee2fc34fd55636d7b517f7bd8793adda113905d1ac6c122bd88012ee"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Human oversight aims to prevent or minimise risks to health, safety or fundamental rights",
+      "These risks may emerge when a high-risk AI system is used in accordance with its intended purpose or under conditions of reasonably foreseeable misuse",
+      "Human oversight is particularly important where risks persist despite application of other requirements"
+    ],
+    "acceptable_citation_targets": [
+      "Article 14(2)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 14"
+  },
+  {
+    "query_id": "q010",
+    "query": "As a product manager, what should our high-risk AI system enable human overseers to do regarding automation bias?",
+    "query_type": "conceptual",
+    "difficulty": "medium",
+    "persona": "product_manager",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "b624544dca557367dbf59b8e0a67d88af07b7458786a43fe7e6f6d7ed06110bf",
+      "ab61cfe3ee2fc34fd55636d7b517f7bd8793adda113905d1ac6c122bd88012ee"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "High-risk AI systems must be designed to enable effective human oversight by natural persons during use",
+      "Human overseers must have necessary competence, training, and authority to perform oversight",
+      "Human oversight should aim to prevent or minimize risks to health, safety, or fundamental rights",
+      "The passages do not specifically address automation bias or how to mitigate it through human oversight mechanisms"
+    ],
+    "acceptable_citation_targets": [
+      "Article 14(4)",
+      "Article 14(4)(b)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 14"
+  },
+  {
+    "query_id": "q011",
+    "query": "What are the required components of a quality management system for high-risk AI systems?",
+    "query_type": "factual",
+    "difficulty": "easy",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "237333f7e17414c24879ff92d6aed4da4639bd601e7e81080721ee3bbedc549f",
+      "7b994fb329ca015482e51a75d7283750a340a65c415ccf02aef192e9db61ae79"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Quality management system must be documented in systematic and orderly manner as written policies, procedures and instructions",
+      "Must include a strategy for regulatory compliance, including conformity assessment procedures and management of modifications",
+      "Must include techniques, procedures and systematic actions for design (and other aspects as listed in Article 17)",
+      "Providers of high-risk AI systems are required to have a quality management system in place that complies with Article 17"
+    ],
+    "acceptable_citation_targets": [
+      "Article 17",
+      "Article 17(1)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 17"
+  },
+  {
+    "query_id": "q012",
+    "query": "How does the quality management system requirement relate to risk management and post-market monitoring obligations?",
+    "query_type": "cross_reference",
+    "difficulty": "medium",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "237333f7e17414c24879ff92d6aed4da4639bd601e7e81080721ee3bbedc549f",
+      "696e3da556910bd34740d09cf3fbdacf231246fdf86f207577bc79d368abddda",
+      "0ba1049d04c9bf07da13869b755ef77da0fb625ba4f4232a1cb94c9e4c63b7a4",
+      "3913dea651567e4e64a0e08b4bb3ae6eef379a8590c0ab53674b2d7f361fb105"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Quality management system is a documented system ensuring compliance with EU AI Act requirements for high-risk AI systems",
+      "Risk management system is a separate continuous iterative process throughout the AI system lifecycle that identifies and analyzes known and foreseeable risks",
+      "Post-market monitoring system requires providers to actively collect and analyze performance data throughout the system's lifetime",
+      "These three systems are complementary obligations that together ensure high-risk AI systems remain compliant and safe from design through post-market deployment"
+    ],
+    "acceptable_citation_targets": [
+      "Article 17(1)(g)",
+      "Article 17(1)(h)",
+      "Article 9",
+      "Article 72"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 17"
+  },
+  {
+    "query_id": "q013",
+    "query": "What information must be included in the instructions for use of high-risk AI systems?",
+    "query_type": "factual",
+    "difficulty": "easy",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "8de718e2dde3b14955d292af189fb49ac204a5e14255544eed57eb1bb6a31a5b",
+      "ab61cfe3ee2fc34fd55636d7b517f7bd8793adda113905d1ac6c122bd88012ee",
+      "b2ee6169332b114e6fe8fb9616391dfc193a464cfa5f2773c42ee96bd0a9f1f1"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Instructions for use must be in an appropriate digital format or otherwise",
+      "Must include concise and complete information about system operation and transparency",
+      "Must describe implementation of human oversight measures",
+      "Must include measures for risk materialization and complaint mechanisms"
+    ],
+    "acceptable_citation_targets": [
+      "Article 13(3)",
+      "Article 13(3)(a)",
+      "Article 13(3)(b)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 13"
+  },
+  {
+    "query_id": "q014",
+    "query": "What accuracy and robustness information do we need to document about our high-risk AI system?",
+    "query_type": "factual",
+    "difficulty": "medium",
+    "persona": "product_manager",
+    "split": "test",
+    "relevant_chunk_ids": [
+      "a1a5685d937f62c406fbc9487e2d06e144d77a8fba1264ade7f8a49beaa1d98d",
+      "8de718e2dde3b14955d292af189fb49ac204a5e14255544eed57eb1bb6a31a5b",
+      "226a3a67acce6c2b5b7515331a63006cfdf1e16d4a08400345789f8bc928d081"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "High-risk AI systems must achieve an appropriate level of accuracy and robustness, performing consistently throughout their lifecycle",
+      "Technical documentation must include accuracy information appropriate to the model's size and risk profile",
+      "Instructions for use must be provided to deployers to enable interpretation of system output",
+      "The Commission will establish technical standards and metrics for measuring appropriate levels of accuracy and robustness"
+    ],
+    "acceptable_citation_targets": [
+      "Article 13(3)(b)(ii)",
+      "Article 15"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 13"
+  },
+  {
+    "query_id": "q015",
+    "query": "What are the transparency requirements when an AI system interacts directly with people?",
+    "query_type": "factual",
+    "difficulty": "easy",
+    "persona": "general",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "f3f94376f3e5d0a666a2f8afdea2135cc444431b8b811dfc236ce2de5a41a0a9"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "AI systems intended to interact directly with natural persons must be designed so that people are informed they are interacting with an AI system",
+      "The obligation does not apply if it is obvious from the perspective of a reasonably well-informed, observant and circumspect person given the circumstances and context of use",
+      "The obligation does not apply to AI systems authorized by law to detect, prevent, or investigate certain matters"
+    ],
+    "acceptable_citation_targets": [
+      "Article 50(1)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 50"
+  },
+  {
+    "query_id": "q016",
+    "query": "Our chatbot is clearly labeled as 'AI Assistant' in the interface - do we still need to inform users they're interacting with AI?",
+    "query_type": "conceptual",
+    "difficulty": "medium",
+    "persona": "product_manager",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "f3f94376f3e5d0a666a2f8afdea2135cc444431b8b811dfc236ce2de5a41a0a9"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Article 50(1) requires providers to inform users they are interacting with an AI system unless this is obvious from the perspective of a reasonably well-informed, observant and circumspect natural person",
+      "The exception applies when it is obvious considering the circumstances and context of use",
+      "A clear 'AI Assistant' label in the interface may satisfy the 'obvious' exception depending on whether users would reasonably understand this indicates AI interaction",
+      "The obligation applies to AI systems intended to interact directly with natural persons"
+    ],
+    "acceptable_citation_targets": [
+      "Article 50(1)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 50"
+  },
+  {
+    "query_id": "q017",
+    "query": "What's the purpose of keeping logs for AI systems under the EU AI Act?",
+    "query_type": "conceptual",
+    "difficulty": "easy",
+    "persona": "general",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "0920bfc6d57fdbbeaae53693e9826925da0ec5347440c4235529621079fb68df",
+      "bf87e106f894fb84a7b13bfc61b76c7c788edd7696e692019f62dcbdb892627a"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Logs enable identification of situations where high-risk AI systems may present risks or undergo substantial modifications",
+      "Logs facilitate post-market monitoring of high-risk AI systems",
+      "Logs must be kept for a period appropriate to the system's intended purpose, with a minimum of six months retention"
+    ],
+    "acceptable_citation_targets": [
+      "Article 12(2)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 12"
+  },
+  {
+    "query_id": "q018",
+    "query": "What is the purpose of AI regulatory sandboxes according to the EU AI Act?",
+    "query_type": "conceptual",
+    "difficulty": "easy",
+    "persona": "product_manager",
+    "split": "test",
+    "relevant_chunk_ids": [
+      "61bbd525f9bbb14fb389375fdc2d7f9c032206343b9b8b545864e00970c04835",
+      "c804f5507ada232aeb31677e460314d523aded39fb489e7e57c97b257b018767",
+      "25d992ea1bff0803f23aaa6f5c2c118a21dc38cfd743bb51c2a93a2f4f0ff779",
+      "3a43b724b4cdb320f0e32fb90dd1e964e457809ffa464733487d8a63b9cd0e81"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "AI regulatory sandboxes are established at national level by Member States to provide a controlled environment for developing and testing AI systems",
+      "They aim to avoid fragmentation across the Union through common principles and detailed arrangements set by the Commission",
+      "They facilitate innovation by providing priority access to SMEs and start-ups, and enable processing of personal data for developing AI systems in the public interest",
+      "They are subject to supervision and monitoring with procedures for application, participation, and termination"
+    ],
+    "acceptable_citation_targets": [
+      "Article 57(5)",
+      "Article 57"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 57"
+  },
+  {
+    "query_id": "q019",
+    "query": "How does the EU AI Act balance innovation promotion with protection of fundamental rights and what regulatory mechanisms does it establish to achieve this balance?",
+    "query_type": "conceptual",
+    "difficulty": "hard",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "1d8cc9ed008725444686b76a3d9ee065ff98fd363c07e97d9e55c944a32af4c7",
+      "fc34e9d3d6078f2661466f6a27c5d122aeb5c6e957a30db50e75c078b5b272c8"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "The dual purpose of promoting human-centric and trustworthy AI while ensuring high-level protection of health, safety, and fundamental rights",
+      "Risk-based regulatory approach through high-risk AI system classification and requirements (Annex III)",
+      "Mechanisms for updating high-risk AI categories based on emerging harms and fundamental rights impacts",
+      "Regulatory sandboxes as innovation-enabling mechanisms with common principles for participation and supervision"
+    ],
+    "acceptable_citation_targets": [
+      "Article 1(1)",
+      "Article 1(2)",
+      "Article 1"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 1"
+  },
+  {
+    "query_id": "q020",
+    "query": "We're a hardware manufacturer integrating AI into our products. What's our role under the AI Act - are we considered providers?",
+    "query_type": "conceptual",
+    "difficulty": "medium",
+    "persona": "product_manager",
+    "split": "test",
+    "relevant_chunk_ids": [
+      "77610c47710512ead2c94a45337ee1845f6abebf88d822022942a115a2fce755",
+      "7a3a214918f257e87d13bb6a023c262397613345ad3775153c4584cb2879844b",
+      "1d785f252231fa9616db4c701bad68518107a876f73a6e304dc44f0a95902066",
+      "9931d3c41a8b1d926740bce7dc522fa95dc4bedd4ce044577671a540b7bce920"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Hardware manufacturers integrating AI systems may be considered providers if they place the AI system on the market or put it into service in the Union",
+      "The scope of the AI Act applies to providers established in the Union or third countries whose AI systems are used in the Union",
+      "Distributors, importers, and deployers can also be considered providers of high-risk AI systems under Article 25 if they put their name/trademark on the system or make substantial modifications",
+      "Compliance obligations depend on whether the integrated AI system is classified as high-risk and the manufacturer's specific role in the value chain"
+    ],
+    "acceptable_citation_targets": [
+      "Article 2(1)(e)",
+      "Article 2(1)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 2"
+  },
+  {
+    "query_id": "q021",
+    "query": "As a compliance officer, I need to understand: what is the legal distinction between a provider and a deployer of an AI system?",
+    "query_type": "conceptual",
+    "difficulty": "medium",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "77610c47710512ead2c94a45337ee1845f6abebf88d822022942a115a2fce755",
+      "1d785f252231fa9616db4c701bad68518107a876f73a6e304dc44f0a95902066",
+      "8de718e2dde3b14955d292af189fb49ac204a5e14255544eed57eb1bb6a31a5b",
+      "4411a6599f8d2eecaa9a170bbf91ea445a5fc33e9d074eb80cb8e07c453d9d3e"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Definition of 'provider' - entity responsible for developing/placing AI systems on the market",
+      "Definition of 'deployer' - entity that uses/operates an AI system in practice",
+      "Provider obligations under Article 16 (design, documentation, compliance)",
+      "Deployer obligations regarding transparency, instructions for use, and decision-making explanations"
+    ],
+    "acceptable_citation_targets": [
+      "Article 3(3)",
+      "Article 3(4)",
+      "Article 3"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 3"
+  },
+  {
+    "query_id": "q022",
+    "query": "What conformity assessment procedures must notified bodies follow when verifying high-risk AI systems?",
+    "query_type": "cross_reference",
+    "difficulty": "easy",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "4424fbbcc1f33c8abe85f41a7b12514fecf2f291ea040f9c84b7fb76c7a9177c",
+      "94d73c89f605a7e65e49940c61f6fb4258ac7b673d76772f6eff8a7c7aa9d279",
+      "6f50a4b08e9e57457de7d51bdcb77072928aed720d1b500d2fda4623b4db7b7d"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Notified bodies must verify conformity in accordance with the conformity assessment procedures set out in Article 43",
+      "For high-risk AI systems in point 1 of Annex III, providers may choose between internal control (Annex VI) or assessment of quality management system and technical documentation",
+      "For high-risk AI systems in points 2-8 of Annex III, the internal control procedure applies and does not involve notified bodies",
+      "Notified bodies must avoid unnecessary burdens and consider provider size, sector, structure, and system complexity when performing activities"
+    ],
+    "acceptable_citation_targets": [
+      "Article 34(1)",
+      "Article 43"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 34"
+  },
+  {
+    "query_id": "q023",
+    "query": "What regulation governs the process for requesting harmonised standards from European standardisation organisations?",
+    "query_type": "cross_reference",
+    "difficulty": "easy",
+    "persona": "general",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "ac0d3f1ce1b450e4f436a8f184feaceed7ef4ddcd9b11a0d379402466d40ba95",
+      "a9446ec83d34a7c077d9e8b56ed21bc5c6ee4bf544b265a15939f04de923d943",
+      "46429198c69f8adae0fc8522feaff88f97c2dc897ed72a40a876fbe86458d293"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Regulation (EU) No 1025/2012 governs the process",
+      "Article 10(1) of Regulation (EU) No 1025/2012 is the specific provision for requesting harmonised standards",
+      "The Commission requests European standardisation organisations to draft harmonised standards",
+      "The process applies to requirements in Section 2 of Chapter IV and Sections 2-3 of Chapter V of the EU AI Act"
+    ],
+    "acceptable_citation_targets": [
+      "Article 41(1)(a)",
+      "Article 10(1) of Regulation (EU) No 1025/2012"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 41"
+  },
+  {
+    "query_id": "q024",
+    "query": "What is the scope limitation for high-risk AI systems that fall under existing Union harmonisation legislation, and which specific articles still apply?",
+    "query_type": "cross_reference",
+    "difficulty": "hard",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "f33368f475b8ba7933f0ccfa09addae36ba87a89ef20797d614c7984ac7e01d5",
+      "9931d3c41a8b1d926740bce7dc522fa95dc4bedd4ce044577671a540b7bce920",
+      "1624fca66a72bd0698d568a18e6742e08f94751f0839e256af9b96034f1af0b0"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "High-risk AI systems that are safety components of products covered by Union harmonisation legislation listed in Annex I are subject to classification rules under Article 6",
+      "Article 57 applies only insofar as requirements for high-risk AI systems have been integrated into the Union harmonisation legislation",
+      "High-risk AI systems must comply with requirements in Section (Article 8) taking into account their intended purpose and state of the art, with consideration of the risk management system"
+    ],
+    "acceptable_citation_targets": [
+      "Article 2(2)",
+      "Article 6(1)",
+      "Articles 102 to 109",
+      "Article 112",
+      "Annex I Section B"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 2"
+  },
+  {
+    "query_id": "q025",
+    "query": "What is the relationship between post-market monitoring obligations and the risk management system requirements?",
+    "query_type": "cross_reference",
+    "difficulty": "medium",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "3913dea651567e4e64a0e08b4bb3ae6eef379a8590c0ab53674b2d7f361fb105",
+      "696e3da556910bd34740d09cf3fbdacf231246fdf86f207577bc79d368abddda",
+      "e0d765a2cc2be1bea267472a9b37a152d820a3a8d2cf2c4ca072af5ddc997375"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Post-market monitoring is a continuous process that collects and analyzes performance data throughout the AI system's lifetime to identify corrective or preventive actions",
+      "Risk management is a continuous iterative process throughout the entire lifecycle requiring regular systematic review and updating to identify known and foreseeable risks",
+      "Both systems are lifecycle-wide requirements for high-risk AI systems that work together to ensure ongoing compliance and safety",
+      "Post-market monitoring uses real-world performance data to inform and update risk assessments identified in the risk management system"
+    ],
+    "acceptable_citation_targets": [
+      "Article 9(2)(c)",
+      "Article 72",
+      "Article 9"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 9"
+  },
+  {
+    "query_id": "q026",
+    "query": "What quality management requirements apply to providers of high-risk AI systems?",
+    "query_type": "cross_reference",
+    "difficulty": "medium",
+    "persona": "compliance_officer",
+    "split": "test",
+    "relevant_chunk_ids": [
+      "237333f7e17414c24879ff92d6aed4da4639bd601e7e81080721ee3bbedc549f",
+      "7b994fb329ca015482e51a75d7283750a340a65c415ccf02aef192e9db61ae79"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Providers must establish and maintain a documented quality management system",
+      "The system must include a strategy for regulatory compliance and conformity assessment procedures",
+      "The system must include techniques, procedures and systematic actions for design and development",
+      "The quality management system must comply with Article 17 requirements"
+    ],
+    "acceptable_citation_targets": [
+      "Article 16(c)",
+      "Article 17"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 16"
+  },
+  {
+    "query_id": "q027",
+    "query": "Does the EU AI Act apply to AI providers located outside the European Union?",
+    "query_type": "factual",
+    "difficulty": "easy",
+    "persona": "general",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "7a3a214918f257e87d13bb6a023c262397613345ad3775153c4584cb2879844b",
+      "1624fca66a72bd0698d568a18e6742e08f94751f0839e256af9b96034f1af0b0"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "The EU AI Act applies to providers located outside the EU if they place AI systems or general-purpose AI models on the market or put them into service in the Union",
+      "The EU AI Act applies to third-country providers whose AI system output is used in the Union",
+      "The regulation does not apply to areas outside the scope of Union law or to matters concerning national security"
+    ],
+    "acceptable_citation_targets": [
+      "Article 2(1)(a)",
+      "Article 2(1)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 2"
+  },
+  {
+    "query_id": "q028",
+    "query": "I'm an importer bringing AI systems into the EU market. Do I have any obligations under this regulation?",
+    "query_type": "factual",
+    "difficulty": "easy",
+    "persona": "general",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "4c7ed84ee8fe2d8c95fd6a1d2a50b612d70dcee9785ad2461176b6697a83ed7e",
+      "046ed64e8694812fa194f6199842074f6410501a4a58e8b5e3120038f4eef23c",
+      "77610c47710512ead2c94a45337ee1845f6abebf88d822022942a115a2fce755",
+      "7a3a214918f257e87d13bb6a023c262397613345ad3775153c4584cb2879844b"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Importers must verify high-risk AI systems bear required CE marking and are accompanied by EU declaration of conformity and instructions for use before making them available on the market",
+      "Importers must verify that providers and other parties have complied with their respective obligations under the Regulation",
+      "Importers must not place non-conforming or falsified high-risk AI systems on the market and must inform the provider if the system presents a risk",
+      "Importers can become providers themselves if they put their name/trademark on a system or make substantial modifications, subjecting them to provider obligations"
+    ],
+    "acceptable_citation_targets": [
+      "Article 2(1)(d)",
+      "Article 2(1)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 2"
+  },
+  {
+    "query_id": "q029",
+    "query": "Who qualifies as an 'operator' under the EU AI Act and what roles does this term encompass?",
+    "query_type": "factual",
+    "difficulty": "easy",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "1d785f252231fa9616db4c701bad68518107a876f73a6e304dc44f0a95902066",
+      "5d40ba640ac12a6facabafe59e1c178e1e6b16880b472ae11acc298e601415dd",
+      "7a3a214918f257e87d13bb6a023c262397613345ad3775153c4584cb2879844b"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Definition of 'operator' as referenced in Article 2(1) of the EU AI Act",
+      "Specific roles encompassed by the term 'operator' (providers, deployers, importers, distributors, etc.)",
+      "Distinction between different types of operators and their respective obligations",
+      "Geographic scope of who qualifies as an operator (EU-established vs. third-country entities)"
+    ],
+    "acceptable_citation_targets": [
+      "Article 3(8)",
+      "Article 3"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 3"
+  },
+  {
+    "query_id": "q030",
+    "query": "What are the AI literacy requirements for providers and deployers under the EU AI Act?",
+    "query_type": "factual",
+    "difficulty": "easy",
+    "persona": "compliance_officer",
+    "split": "test",
+    "relevant_chunk_ids": [
+      "c9b3917b6cde4e023871bd750fe32948e2dfbb212ee5a37ecba62e31cebade79",
+      "3570d0079a47246364ed809d3c9dc98ec21509bfb320c366d8a71b401700f6f5"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Providers and deployers must ensure sufficient AI literacy levels among their staff and persons operating AI systems",
+      "AI literacy is defined as skills, knowledge and understanding enabling informed deployment of AI systems and awareness of opportunities, risks and possible harms",
+      "Requirements must be tailored to staff technical knowledge, experience, education, training and the specific context of AI system use",
+      "Consideration must be given to the persons or groups affected by the AI systems"
+    ],
+    "acceptable_citation_targets": [
+      "Article 4"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 4"
+  },
+  {
+    "query_id": "q031",
+    "query": "Under what circumstances must an authorised representative provide access to system logs, and are there any limitations on this obligation?",
+    "query_type": "factual",
+    "difficulty": "hard",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "41540ca737d24e7b273a8cde373f5c7a8043adcd518545259dc9ede496469ecb",
+      "7fd2858916da30bba8199cfc4865109771996154a39b551934e181eadf3ab4a5"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Circumstances requiring access to system logs (upon reasoned request from competent authorities)",
+      "Limitation that logs must be automatically generated by the high-risk AI system",
+      "Limitation that logs must be under the control of the provider",
+      "Specific obligations of authorised representatives regarding log access (not clearly addressed in passages)"
+    ],
+    "acceptable_citation_targets": [
+      "Article 47(c)",
+      "Article 12(1)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 47"
+  },
+  {
+    "query_id": "q032",
+    "query": "If the European Parliament decides to extend the review period for a delegated act under Article 51(3), what is the maximum total time before the act can enter into force assuming no objections?",
+    "query_type": "factual",
+    "difficulty": "hard",
+    "persona": "product_manager",
+    "split": "test",
+    "relevant_chunk_ids": [
+      "81a0be3ed63a4c1fae7d21e0cdf001f07019ab7443f8c030d02d1ca5fec70af9"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Initial three-month notification period for objections",
+      "Additional three-month extension period initiated by European Parliament or Council",
+      "Total maximum of six months before entry into force (3 + 3 months)",
+      "Act enters into force if no objection is expressed within this extended period"
+    ],
+    "acceptable_citation_targets": [
+      "Article 47",
+      "Article 51(3)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 47"
+  },
+  {
+    "query_id": "q033",
+    "query": "As a compliance officer, what are the specific categories of rules and obligations established by the EU AI Act that our organization needs to be aware of?",
+    "query_type": "factual",
+    "difficulty": "medium",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "3c277bfc00ce7c82f4f314729eda323fbc572d459357c1605870714742e72d7f",
+      "f3f94376f3e5d0a666a2f8afdea2135cc444431b8b811dfc236ce2de5a41a0a9",
+      "08ab145f60e3a946fef11240994b89e4923ed872c8dba81c2a74b575fbd21463",
+      "a2f3e3104505ccf4b4f3df57b0dac1cacd74753952c91ecf7c9174bd5a765384",
+      "1c768d674ca3248bf753453293d5f7ec79bec22028fe7e8c562b3e315f42e6bf"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Overview of the main regulatory categories (e.g., prohibited AI systems, high-risk AI systems, transparency obligations, general-purpose AI models)",
+      "Specific obligations for AI providers and deployers across different risk categories",
+      "Compliance mechanisms including codes of practice, harmonised standards, and conformity assessment procedures",
+      "Governance structure including roles of the AI Office, national competent authorities, and enforcement mechanisms"
+    ],
+    "acceptable_citation_targets": [
+      "Article 1(2)",
+      "Article 1"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 1"
+  },
+  {
+    "query_id": "q034",
+    "query": "What fundamental values beyond just safety does the AI Act aim to protect?",
+    "query_type": "factual",
+    "difficulty": "medium",
+    "persona": "general",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "fc34e9d3d6078f2661466f6a27c5d122aeb5c6e957a30db50e75c078b5b272c8",
+      "f044c9c59f44227c622aadcec0ce90437278381e10c43ef3f7bccc74c0f57e84"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Protection of fundamental rights beyond safety (e.g., human dignity, autonomy, non-discrimination)",
+      "Specific prohibited practices that protect values like informed decision-making and freedom from manipulation",
+      "Broader societal values and principles that the AI Act seeks to uphold beyond physical/health safety"
+    ],
+    "acceptable_citation_targets": [
+      "Article 1(1)",
+      "Article 1"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 1"
+  },
+  {
+    "query_id": "q035",
+    "query": "Does Article 4 specify the minimum number of training hours required for AI literacy compliance?",
+    "query_type": "factual",
+    "difficulty": "medium",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "c9b3917b6cde4e023871bd750fe32948e2dfbb212ee5a37ecba62e31cebade79",
+      "3570d0079a47246364ed809d3c9dc98ec21509bfb320c366d8a71b401700f6f5"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Article 4 does not specify a minimum number of training hours",
+      "Article 4 requires 'sufficient level of AI literacy' but leaves the standard flexible based on context",
+      "Compliance depends on technical knowledge, experience, education and training of staff, and the context of AI system use",
+      "AI literacy is defined qualitatively (skills, knowledge, understanding) rather than quantitatively in terms of hours"
+    ],
+    "acceptable_citation_targets": [
+      "Article 4"
+    ],
+    "is_unanswerable": true,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 4"
+  },
+  {
+    "query_id": "q036",
+    "query": "If our AI-enabled product falls under both the AI Act and existing EU product safety laws, who is responsible for ensuring full compliance with all applicable requirements?",
+    "query_type": "factual",
+    "difficulty": "medium",
+    "persona": "product_manager",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "9931d3c41a8b1d926740bce7dc522fa95dc4bedd4ce044577671a540b7bce920",
+      "77610c47710512ead2c94a45337ee1845f6abebf88d822022942a115a2fce755",
+      "f33368f475b8ba7933f0ccfa09addae36ba87a89ef20797d614c7984ac7e01d5"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "High-risk AI systems must comply with requirements of both the AI Act and applicable Union harmonisation legislation listed in Annex I",
+      "Providers bear primary responsibility, but distributors, importers, deployers and other third parties can be considered providers if they put their name/trademark on the system or make substantial modifications",
+      "Compliance must account for the product's intended purpose and the risk management system requirements"
+    ],
+    "acceptable_citation_targets": [
+      "Article 8(2)",
+      "Annex I Section A"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 8"
+  },
+  {
+    "query_id": "q037",
+    "query": "Do I need to train my employees on AI if we're deploying an AI system in our company?",
+    "query_type": "procedural",
+    "difficulty": "easy",
+    "persona": "general",
+    "split": "test",
+    "relevant_chunk_ids": [
+      "c9b3917b6cde4e023871bd750fe32948e2dfbb212ee5a37ecba62e31cebade79",
+      "ab61cfe3ee2fc34fd55636d7b517f7bd8793adda113905d1ac6c122bd88012ee"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Providers and deployers must ensure sufficient AI literacy of their staff",
+      "Training should be tailored to technical knowledge, experience, education and the context of AI system use",
+      "Deployers must assign human oversight to persons with necessary competence and training",
+      "These obligations apply to those dealing with operation and use of AI systems"
+    ],
+    "acceptable_citation_targets": [
+      "Article 4"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 4"
+  },
+  {
+    "query_id": "q038",
+    "query": "Do we need to keep logs for our high-risk AI system and what should they include?",
+    "query_type": "procedural",
+    "difficulty": "easy",
+    "persona": "product_manager",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "bf87e106f894fb84a7b13bfc61b76c7c788edd7696e692019f62dcbdb892627a",
+      "0920bfc6d57fdbbeaae53693e9826925da0ec5347440c4235529621079fb68df"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "High-risk AI systems must technically allow for automatic recording of events (logs) over their lifetime",
+      "Logs must be kept for a period appropriate to the intended purpose, of at least six months",
+      "Logs should record events relevant to identifying risks and facilitating post-market monitoring",
+      "Providers must keep logs to the extent they are under their control"
+    ],
+    "acceptable_citation_targets": [
+      "Article 12(1)",
+      "Article 12(2)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 12"
+  },
+  {
+    "query_id": "q039",
+    "query": "As a compliance officer, what documentation requirements exist regarding accuracy metrics for high-risk AI systems?",
+    "query_type": "procedural",
+    "difficulty": "easy",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "a1a5685d937f62c406fbc9487e2d06e144d77a8fba1264ade7f8a49beaa1d98d",
+      "9931d3c41a8b1d926740bce7dc522fa95dc4bedd4ce044577671a540b7bce920",
+      "8de718e2dde3b14955d292af189fb49ac204a5e14255544eed57eb1bb6a31a5b"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "High-risk AI systems must achieve appropriate levels of accuracy and robustness as per Article 15",
+      "The Commission shall encourage development of technical standards and metrics for measuring accuracy levels in cooperation with stakeholders",
+      "High-risk AI systems must be accompanied by instructions for use with complete information to enable deployers to interpret outputs (Article 13)",
+      "Specific documentation formats and retention periods for accuracy-related logs are not fully detailed in these passages"
+    ],
+    "acceptable_citation_targets": [
+      "Article 15(3)"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 15"
+  },
+  {
+    "query_id": "q040",
+    "query": "If harmonized standards don't fully cover the requirements in Section 2, what does our quality management system need to address?",
+    "query_type": "procedural",
+    "difficulty": "hard",
+    "persona": "product_manager",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "237333f7e17414c24879ff92d6aed4da4639bd601e7e81080721ee3bbedc549f",
+      "46429198c69f8adae0fc8522feaff88f97c2dc897ed72a40a876fbe86458d293",
+      "4424fbbcc1f33c8abe85f41a7b12514fecf2f291ea040f9c84b7fb76c7a9177c"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Conditions under which harmonized standards are considered insufficient (Article 10)",
+      "Requirements for quality management systems when harmonized standards don't fully cover Section 2 (Article 17)",
+      "Alternative conformity assessment procedures when common specifications are used instead of harmonized standards (Article 43)"
+    ],
+    "acceptable_citation_targets": [
+      "Article 17(1)(e)",
+      "Article 17"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 17"
+  },
+  {
+    "query_id": "q041",
+    "query": "If our company deploys a high-risk AI system but the logs are stored and controlled by our cloud infrastructure provider, are we still responsible for maintaining those logs under Article 19?",
+    "query_type": "procedural",
+    "difficulty": "hard",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "bf87e106f894fb84a7b13bfc61b76c7c788edd7696e692019f62dcbdb892627a",
+      "664002719af9594418753bd9131cd43683f5e1e88d11567b8d3fafacd9489b07"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Article 19(1) requires providers to keep logs 'to the extent such logs are under their control'",
+      "The passages do not clarify responsibility allocation when logs are controlled by third parties like cloud providers",
+      "Article 21 requires providers to cooperate with authorities and provide documentation, but does not address third-party log control scenarios"
+    ],
+    "acceptable_citation_targets": [
+      "Article 19(1)",
+      "Article 19"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 19"
+  },
+  {
+    "query_id": "q042",
+    "query": "If our company is based in the US but wants to sell AI products in the EU, do we need an authorised representative?",
+    "query_type": "procedural",
+    "difficulty": "medium",
+    "persona": "product_manager",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "0d16902b3cd39bc4b0986667671a3059ffaa2a80772f35d6fd1472cae6e2cde7",
+      "9fb54a8de3dcbb2f300a4844be356c8036eec74bb34696a6a5853ad6d82c60c6"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Third-country providers (non-EU established) must appoint an authorised representative established in the Union before placing products on the EU market",
+      "This requirement applies to both high-risk AI systems (Article 22) and general-purpose AI models (Article 54)",
+      "The authorised representative must be appointed by written mandate and perform tasks specified in that mandate"
+    ],
+    "acceptable_citation_targets": [
+      "Article 3(5)",
+      "Article 3(3)",
+      "Article 3"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 3"
+  },
+  {
+    "query_id": "q043",
+    "query": "As a compliance officer, what documentation flexibility do we have when our product contains a high-risk AI system and is already subject to other EU harmonisation legislation?",
+    "query_type": "procedural",
+    "difficulty": "medium",
+    "persona": "compliance_officer",
+    "split": "dev",
+    "relevant_chunk_ids": [
+      "9931d3c41a8b1d926740bce7dc522fa95dc4bedd4ce044577671a540b7bce920",
+      "a086a4ef486b8041dac0f917f68887b70148d4d04266a9d2137296bcf2c2b3b7",
+      "6f50a4b08e9e57457de7d51bdcb77072928aed720d1b500d2fda4623b4db7b7d"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "When a product contains an AI system subject to both EU AI Act and other Union harmonisation legislation, the requirements must be coordinated/combined rather than duplicated",
+      "Technical documentation must be drawn up before placing on market/putting into service and kept up-to-date to demonstrate compliance",
+      "For high-risk AI systems covered by Union harmonisation legislation in Annex I Section A, providers must follow the conformity assessment procedures required under those legal acts rather than the standard AI Act procedures"
+    ],
+    "acceptable_citation_targets": [
+      "Article 8(2)",
+      "Annex I Section A"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 8"
+  },
+  {
+    "query_id": "q044",
+    "query": "Our startup is developing a high-risk AI system. Are there any simplified documentation options available for small companies?",
+    "query_type": "procedural",
+    "difficulty": "medium",
+    "persona": "product_manager",
+    "split": "test",
+    "relevant_chunk_ids": [
+      "a086a4ef486b8041dac0f917f68887b70148d4d04266a9d2137296bcf2c2b3b7",
+      "94d73c89f605a7e65e49940c61f6fb4258ac7b673d76772f6eff8a7c7aa9d279",
+      "7b994fb329ca015482e51a75d7283750a340a65c415ccf02aef192e9db61ae79"
+    ],
+    "partially_relevant_chunk_ids": [],
+    "expected_answer_elements": [
+      "Technical documentation requirements for high-risk AI systems under Article 11",
+      "Notified bodies' obligation to minimize administrative burdens for micro and small enterprises (Article 34)",
+      "Whether simplified or reduced documentation options exist for small companies",
+      "Specific exemptions or flexibility provisions for startups or SMEs in documentation requirements"
+    ],
+    "acceptable_citation_targets": [
+      "Article 11(1)",
+      "Annex IV"
+    ],
+    "is_unanswerable": false,
+    "reference_answer": "",
+    "notes": "llm-verified",
+    "source_article": "Article 11"
+  }
+]

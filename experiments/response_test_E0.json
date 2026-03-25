@@ -1,0 +1,156 @@
+{
+  "split": "test",
+  "metrics": {
+    "citation_accuracy": 0.8205128205128205,
+    "citation_completeness": 0.6402680652680653,
+    "bad_framing_rate": 0.0,
+    "graceful_failure_rate": 1.0,
+    "avg_cost_usd": 0.011457692307692308,
+    "avg_latency_ms": 8041.697282057542
+  },
+  "per_query": [
+    {
+      "query_id": "q001",
+      "query": "What are the four steps that must be included in a risk management system for high-risk AI systems?",
+      "answered": true,
+      "citation_accuracy": 1.0,
+      "citation_completeness": 0.8571428571428571,
+      "bad_framing": false,
+      "graceful_failure_correct": true,
+      "cost_usd": 0.012777,
+      "latency_ms": 11967.52381324768
+    },
+    {
+      "query_id": "q003",
+      "query": "Which committee must the Commission inform before drafting implementing acts for common specifications?",
+      "answered": true,
+      "citation_accuracy": 0.5,
+      "citation_completeness": 0.6666666666666666,
+      "bad_framing": false,
+      "graceful_failure_correct": true,
+      "cost_usd": 0.006786,
+      "latency_ms": 4058.8390827178955
+    },
+    {
+      "query_id": "q004",
+      "query": "What happens to common specifications once harmonised standards are published in the Official Journal?",
+      "answered": true,
+      "citation_accuracy": 1.0,
+      "citation_completeness": 0.14285714285714285,
+      "bad_framing": false,
+      "graceful_failure_correct": true,
+      "cost_usd": 0.008924999999999999,
+      "latency_ms": 5709.67698097229
+    },
+    {
+      "query_id": "q005",
+      "query": "What AI practices are prohibited under Article 5 of the EU AI Act?",
+      "answered": true,
+      "citation_accuracy": 1.0,
+      "citation_completeness": 0.9,
+      "bad_framing": false,
+      "graceful_failure_correct": true,
+      "cost_usd": 0.013731,
+      "latency_ms": 12036.404132843018
+    },
+    {
+      "query_id": "q008",
+      "query": "As a product manager, do I need to make all information in the EU database publicly accessible when I register my AI system?",
+      "answered": true,
+      "citation_accuracy": 0.42857142857142855,
+      "citation_completeness": 0.7,
+      "bad_framing": false,
+      "graceful_failure_correct": true,
+      "cost_usd": 0.010986,
+      "latency_ms": 9040.20619392395
+    },
+    {
+      "query_id": "q014",
+      "query": "What accuracy and robustness information do we need to document about our high-risk AI system?",
+      "answered": true,
+      "citation_accuracy": 1.0,
+      "citation_completeness": 0.7142857142857143,
+      "bad_framing": false,
+      "graceful_failure_correct": true,
+      "cost_usd": 0.01437,
+      "latency_ms": 9155.745029449463
+    },
+    {
+      "query_id": "q018",
+      "query": "What is the purpose of AI regulatory sandboxes according to the EU AI Act?",
+      "answered": true,
+      "citation_accuracy": 1.0,
+      "citation_completeness": 1.0,
+      "bad_framing": false,
+      "graceful_failure_correct": true,
+      "cost_usd": 0.017145,
+      "latency_ms": 5948.904991149902
+    },
+    {
+      "query_id": "q020",
+      "query": "We're a hardware manufacturer integrating AI into our products. What's our role under the AI Act - are we considered providers?",
+      "answered": true,
+      "citation_accuracy": 0.7142857142857143,
+      "citation_completeness": 0.875,
+      "bad_framing": false,
+      "graceful_failure_correct": true,
+      "cost_usd": 0.012105,
+      "latency_ms": 7710.618019104004
+    },
+    {
+      "query_id": "q026",
+      "query": "What quality management requirements apply to providers of high-risk AI systems?",
+      "answered": true,
+      "citation_accuracy": 0.8571428571428571,
+      "citation_completeness": 1.0,
+      "bad_framing": false,
+      "graceful_failure_correct": true,
+      "cost_usd": 0.015084,
+      "latency_ms": 11653.602838516235
+    },
+    {
+      "query_id": "q030",
+      "query": "What are the AI literacy requirements for providers and deployers under the EU AI Act?",
+      "answered": true,
+      "citation_accuracy": 1.0,
+      "citation_completeness": 0.18181818181818182,
+      "bad_framing": false,
+      "graceful_failure_correct": true,
+      "cost_usd": 0.010773000000000001,
+      "latency_ms": 8684.292793273926
+    },
+    {
+      "query_id": "q032",
+      "query": "If the European Parliament decides to extend the review period for a delegated act under Article 51(3), what is the maximum total time before the act can enter into force assuming no objections?",
+      "answered": true,
+      "citation_accuracy": 0.6666666666666666,
+      "citation_completeness": 0.6,
+      "bad_framing": false,
+      "graceful_failure_correct": true,
+      "cost_usd": 0.0064080000000000005,
+      "latency_ms": 4853.801012039185
+    },
+    {
+      "query_id": "q037",
+      "query": "Do I need to train my employees on AI if we're deploying an AI system in our company?",
+      "answered": true,
+      "citation_accuracy": 1.0,
+      "citation_completeness": 0.4,
+      "bad_framing": false,
+      "graceful_failure_correct": true,
+      "cost_usd": 0.008661,
+      "latency_ms": 5913.020849227905
+    },
+    {
+      "query_id": "q044",
+      "query": "Our startup is developing a high-risk AI system. Are there any simplified documentation options available for small companies?",
+      "answered": true,
+      "citation_accuracy": 0.5,
+      "citation_completeness": 0.2857142857142857,
+      "bad_framing": false,
+      "graceful_failure_correct": true,
+      "cost_usd": 0.011199,
+      "latency_ms": 7809.428930282593
+    }
+  ]
+}

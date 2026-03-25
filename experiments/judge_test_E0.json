@@ -1,0 +1,166 @@
+{
+  "split": "test",
+  "metrics": {
+    "answer_relevance": 0.9346153846153846,
+    "faithfulness": 0.9653846153846154,
+    "factual_consistency": 1.0
+  },
+  "per_query": [
+    {
+      "query_id": "q001",
+      "query": "What are the four steps that must be included in a risk management system for high-risk AI systems?",
+      "answer_relevance": 1.0,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and completely addresses the question by identifying all four required steps from EU AI Act Article 9(2) with appropriate specificity, proper citations, and relevant context about the iterative nature of the process.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, specifically Article 9(2) which outlines the four steps of the risk management system for high-risk AI systems.",
+        "factual_consistency": "All factual claims in the answer are directly supported by Article 9(2) of the provided context; the four steps are accurately quoted and properly attributed, and the characterization of the risk management system as a continuous iterative process is correctly cited."
+      }
+    },
+    {
+      "query_id": "q003",
+      "query": "Which committee must the Commission inform before drafting implementing acts for common specifications?",
+      "answer_relevance": 1.0,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and completely identifies the specific committee (the committee referred to in Article 22 of Regulation (EU) No 1025/2012) that must be informed before drafting implementing acts for common specifications, with proper citation to Article 41(2) of the EU AI Act.",
+        "faithfulness": "All factual claims in the answer are directly supported by the provided context passages, specifically Article 41(2) which states the Commission must inform the committee referred to in Article 22 of Regulation (EU) No 1025/2012 before preparing a draft implementing act.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the provided context passages, specifically Article 41(2), which explicitly states the Commission must inform the committee referred to in Article 22 of Regulation (EU) No 1025/2012 before preparing a draft implementing act."
+      }
+    },
+    {
+      "query_id": "q004",
+      "query": "What happens to common specifications once harmonised standards are published in the Official Journal?",
+      "answer_relevance": 0.9,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and comprehensively addresses the question by clearly explaining that common specifications are repealed/withdrawn once harmonised standards are published in the Official Journal, with appropriate regulatory citations and procedural details that fully satisfy the query.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, specifically Article 41(4) which is quoted and accurately paraphrased.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the provided context passages, particularly Article 41(4), with no contradictions or unsupported assertions."
+      }
+    },
+    {
+      "query_id": "q005",
+      "query": "What AI practices are prohibited under Article 5 of the EU AI Act?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by identifying all eight prohibited AI practices under Article 5 of the EU AI Act with appropriate specificity, including relevant exceptions and conditions, though it could have briefly noted that Article 5 covers 'prohibited' rather than merely 'restricted' practices.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the context passages, specifically Article 5 of the EU AI Act which comprehensively lists all eight prohibited AI practices with their exact conditions and exceptions.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Article 5 of the EU AI Act; no contradictions or unsupported information is present."
+      }
+    },
+    {
+      "query_id": "q008",
+      "query": "As a product manager, do I need to make all information in the EU database publicly accessible when I register my AI system?",
+      "answer_relevance": 0.95,
+      "faithfulness": 0.85,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and comprehensively addresses the question by clearly stating that not all information needs to be publicly accessible, then providing specific regulatory details about which information is public versus restricted, with appropriate citations to the EU AI Act articles.",
+        "faithfulness": "The answer is largely faithful to the context, accurately describing public accessibility rules and exceptions for the EU database. However, one claim about Article 71(2) and (3) being 'generally publicly accessible' is not explicitly supported by the provided context passages.",
+        "factual_consistency": "All factual claims in the answer are consistent with the provided context passages, accurately reflecting the EU AI Act's provisions on database accessibility with appropriate exceptions for sensitive systems."
+      }
+    },
+    {
+      "query_id": "q014",
+      "query": "What accuracy and robustness information do we need to document about our high-risk AI system?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses all major aspects of accuracy and robustness documentation requirements for high-risk AI systems under the EU AI Act, with specific article citations, clear categorization, and only minor omissions of peripheral details.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages from Articles 13, 15, and the EU AI Act regulatory text.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from the EU AI Act regulatory text."
+      }
+    },
+    {
+      "query_id": "q018",
+      "query": "What is the purpose of AI regulatory sandboxes according to the EU AI Act?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by directly citing the EU AI Act's stated purposes of AI regulatory sandboxes, including their primary function and five specific objectives, with appropriate article references and only a minor caveat that it includes a disclaimer statement not strictly necessary to answer the core question.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to specific articles and sections of the EU AI Act.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Articles 57 and 62 of the EU AI Act."
+      }
+    },
+    {
+      "query_id": "q020",
+      "query": "We're a hardware manufacturer integrating AI into our products. What's our role under the AI Act - are we considered providers?",
+      "answer_relevance": 0.9,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by clearly defining provider status under the AI Act, providing specific conditions for when a hardware manufacturer qualifies as a provider, citing relevant articles, explaining key determining factors, and acknowledging edge cases like third-party integration\u2014with only minor room for additional detail on specific product categories or examples.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages from Articles 2, 3, and 25 of the EU AI Act.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Articles 2, 3, and 25 of the EU AI Act."
+      }
+    },
+    {
+      "query_id": "q026",
+      "query": "What quality management requirements apply to providers of high-risk AI systems?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the question by detailing all 13 required components of quality management systems for high-risk AI providers under the EU AI Act, including the core obligation, proportionality considerations, and special cases for financial institutions, with only minor room for additional context on implementation timelines or enforcement mechanisms.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to specific articles and paragraphs.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from Articles 8, 16, and 17 of the EU AI Act."
+      }
+    },
+    {
+      "query_id": "q030",
+      "query": "What are the AI literacy requirements for providers and deployers under the EU AI Act?",
+      "answer_relevance": 0.85,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer comprehensively addresses the core AI literacy requirements for providers and deployers under the EU AI Act, including the fundamental obligation, definition, contextual factors, and proportionality principle, though it lacks specific details about enforcement mechanisms, penalties, or how these requirements differ between high-risk and non-high-risk AI systems.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages from Recital 56 and Articles 4 and 50 of the EU AI Act.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages from the EU AI Act."
+      }
+    },
+    {
+      "query_id": "q032",
+      "query": "If the European Parliament decides to extend the review period for a delegated act under Article 51(3), what is the maximum total time before the act can enter into force assuming no objections?",
+      "answer_relevance": 0.9,
+      "faithfulness": 0.7,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and completely addresses the question by identifying the maximum total time (6 months) before a delegated act can enter into force when the European Parliament extends the review period under Article 51(3), with proper citation of the relevant regulatory provisions and clear explanation of the calculation.",
+        "faithfulness": "Most claims are directly supported by the context, but the answer makes an unsupported inference about Article 51(3) specifically and contains one ambiguous claim about the maximum total time.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the provided context passages, particularly Article 47(5) and Article 97(2), with no contradictions identified."
+      }
+    },
+    {
+      "query_id": "q037",
+      "query": "Do I need to train my employees on AI if we're deploying an AI system in our company?",
+      "answer_relevance": 0.95,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and comprehensively addresses the question by confirming the training requirement, citing specific regulatory provisions, explaining the scope of the obligation, detailing what factors should be considered, and noting additional requirements for high-risk systems.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the provided context passages, with accurate citations to Article 4, Article 13, and appropriate qualifications about the scope of obligations.",
+        "factual_consistency": "All factual claims in the answer are directly supported by and consistent with the provided context passages, particularly Article 4 on AI literacy and Articles 13 and 27 on high-risk AI systems."
+      }
+    },
+    {
+      "query_id": "q044",
+      "query": "Our startup is developing a high-risk AI system. Are there any simplified documentation options available for small companies?",
+      "answer_relevance": 0.9,
+      "faithfulness": 1.0,
+      "factual_consistency": 1.0,
+      "reasoning": {
+        "answer_relevance": "The answer directly and comprehensively addresses the question by confirming simplified documentation options exist for startups under the EU AI Act, providing specific regulatory references, explaining the key requirements and benefits, and appropriately noting limitations in available details while including a proper legal disclaimer.",
+        "faithfulness": "Every factual claim in the answer is directly supported by the context passages, specifically Article 11(1) which details SME documentation requirements, the simplified form requirement, and notified body acceptance.",
+        "factual_consistency": "All factual claims in the answer are directly supported by the context passages, particularly Article 11(1), which explicitly states that SMEs including start-ups may provide technical documentation in simplified manner and that the Commission shall establish a simplified form that notified bodies must accept."
+      }
+    }
+  ]
+}
