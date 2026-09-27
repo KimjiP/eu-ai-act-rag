@@ -45,6 +45,7 @@ SUMMARY_ROWS = [
     ("Recall@5", "retrieval", "recall_at_5"),
     ("MRR", "retrieval", "mrr"),
     ("Citations whose text was retrieved", "answers", "citations_grounded"),
+    ("Citations of a mislabelled passage", "answers", "citations_wrong_label"),
     ("Citations named in retrieved text (cross-reference)", "answers", "citations_cross_reference"),
     ("Citations unsupported", "answers", "citations_unsupported"),
     ("Declined, unanswerable (should be 1.0)", "answers", "unanswerable_declined"),
@@ -183,12 +184,20 @@ def render_record(container, record: dict | None, label: str) -> None:
             st.info("Declined")
         st.markdown(answer["text"])
         if answer["citations"]:
-            marks = {"retrieved": "✓", "cross_reference": "↪ cross-reference", "unsupported": "✗"}
+            marks = {
+                "retrieved": "✓",
+                "wrong_label": "✗ wrong label",
+                "cross_reference": "↪ cross-reference",
+                "unsupported": "✗",
+            }
             st.markdown(
                 "**Citation check:** "
                 + ", ".join(f"{c['citation']} {marks[c['status']]}" for c in answer["citations"])
             )
-            st.caption("✓ text retrieved, ↪ named in the retrieved text but not retrieved, ✗ unsupported")
+            st.caption(
+                "✓ text retrieved, ✗ wrong label: cited a passage's label that does not match its text, "
+                "↪ named in the retrieved text but not retrieved, ✗ unsupported"
+            )
         for name, verdict in record.get("judges", {}).items():
             st.markdown(f"**{name}: {verdict['score']:.2f}** — {verdict.get('reasoning', '')}")
         st.caption(f"Cost ${answer['cost_usd']:.4f}, latency {answer['latency_ms']:.0f} ms")

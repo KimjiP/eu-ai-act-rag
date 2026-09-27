@@ -15,6 +15,7 @@ ROWS = [
     ("Recall@5", "retrieval", "recall_at_5"),
     ("MRR", "retrieval", "mrr"),
     ("Citations: cited text was retrieved", "answers", "citations_grounded"),
+    ("Citations: label of a passage whose text is another provision", "answers", "citations_wrong_label"),
     ("Citations: cross-reference named in retrieved text", "answers", "citations_cross_reference"),
     ("Citations: unsupported", "answers", "citations_unsupported"),
     ("Unanswerable questions declined", "answers", "unanswerable_declined"),
@@ -30,7 +31,7 @@ ROWS = [
 
 def format_value(key: str, value) -> str:
     if value is None:
-        return "—"
+        return "not run"
     if key == "avg_cost_usd":
         return f"${value:.4f}"
     if value > 100:

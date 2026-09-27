@@ -38,17 +38,23 @@ RETRIEVAL_K = 5  # ranks scored for Recall@1/3/5 and MRR
 _CONTAINS_SHOWN = 8  # provisions listed per passage in the saved record
 
 
-def citation_status(citation: str, shown: list[str], context_text: str) -> str:
+def citation_status(
+    citation: str, shown: list[str], labels: list[str | None], context_text: str
+) -> str:
     """How a citation relates to the passages the model was given.
 
     retrieved        the cited provision's own text was among the passages
-    cross_reference  its text was not, but the passages refer to it by number
-                     (e.g. Article 9 mentions "the post-market monitoring system
+    wrong_label      its text was not, but a passage carried its label: the model
+                     cited a label that does not match the text under it
+    cross_reference  neither, but the passages refer to it by number (e.g.
+                     Article 9 mentions "the post-market monitoring system
                      referred to in Article 72")
-    unsupported      neither
+    unsupported      none of the above
     """
     if any(refers_to(citation, p) for p in shown):
         return "retrieved"
+    if any(label and refers_to(citation, label) for label in labels):
+        return "wrong_label"
     ref = parse_reference(citation)
     if ref is not None:
         word = {"article": "Article", "annex": "Annex", "recital": "Recital"}[ref.kind]
@@ -98,9 +104,10 @@ def evaluate_question(item: dict, top_k: int, judges: bool) -> dict:
     context = [(c, index.provisions_in(c.text)) for c in response.retrieved_chunks]
     shown = [p for _, provisions in context for p in provisions]
     context_text = "\n".join(c.text for c in response.retrieved_chunks)
+    labels = [c.article_number for c in response.retrieved_chunks]
     citations = []
     for citation in response.citations:
-        status = citation_status(citation, shown, context_text)
+        status = citation_status(citation, shown, labels, context_text)
         citations.append({"citation": citation, "status": status, "grounded": status == "retrieved"})
     record["answer"] = {
         "text": answer,
@@ -149,6 +156,7 @@ def summarize(records: list[dict]) -> dict:
             "unanswerable_declined": _mean([float(r["answer"]["declined"]) for r in unanswerable]),
             "answerable_declined": _mean([float(r["answer"]["declined"]) for r in answerable]),
             "citations_grounded": _mean([float(c["grounded"]) for c in all_citations]),
+            "citations_wrong_label": _mean([float(c["status"] == "wrong_label") for c in all_citations]),
             "citations_cross_reference": _mean(
                 [float(c["status"] == "cross_reference") for c in all_citations]
             ),
@@ -162,11 +170,18 @@ def summarize(records: list[dict]) -> dict:
         },
     }
     if judged:
+        # Completeness is over all answerable questions: a wrong decline states none of the facts.
+        # The other judges describe an answer, so they are over the answered questions.
         summary["judges"] = {
-            name: _mean([r["judges"][name]["score"] for r in judged if name in r["judges"]])
-            for name in ("completeness", "faithfulness", "factual_consistency", "answer_relevance")
+            "completeness": _mean(
+                [r["judges"]["completeness"]["score"] if "judges" in r else 0.0 for r in answerable]
+            ),
+            **{
+                name: _mean([r["judges"][name]["score"] for r in judged])
+                for name in ("faithfulness", "factual_consistency", "answer_relevance")
+            },
+            "n_judged": len(judged),
         }
-        summary["judges"]["n_judged"] = len(judged)
     return summary
 
 
@@ -176,8 +191,9 @@ def _print_summary(tag: str, split: str, s: dict) -> None:
           f"{s['n_unanswerable']} unanswerable\n{'=' * 64}")
     print(f"  Recall@1 / @3 / @5       {r['recall_at_1']} / {r['recall_at_3']} / {r['recall_at_5']}")
     print(f"  MRR / Precision@5        {r['mrr']} / {r['precision_at_5']}")
-    print(f"  Citations: text retrieved {a['citations_grounded']}, cross-reference "
-          f"{a['citations_cross_reference']}, unsupported {a['citations_unsupported']}  (n={a['n_citations']})")
+    print(f"  Citations: text retrieved {a['citations_grounded']}, wrong label {a['citations_wrong_label']}, "
+          f"cross-reference {a['citations_cross_reference']}, unsupported {a['citations_unsupported']}"
+          f"  (n={a['n_citations']})")
     print(f"  Declined, unanswerable   {a['unanswerable_declined']}  (should be 1.0)")
     print(f"  Declined, answerable     {a['answerable_declined']}  (should be 0.0)")
     print(f"  Bad framing rate         {a['bad_framing_rate']}")
