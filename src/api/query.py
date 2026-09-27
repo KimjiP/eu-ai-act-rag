@@ -13,6 +13,7 @@ from src import config
 from src.generation.citations import (
     CitationVerification,
     detect_bad_framing,
+    detect_decline,
     extract_citations,
     verify_citations,
 )
@@ -50,19 +51,19 @@ def answer_query(
     top_k: int = config.TOP_K_RETRIEVAL,
     filters: dict | None = None,
 ) -> QueryResponse:
-    """Full RAG pipeline: retrieve → check confidence → generate → verify citations.
+    """Full RAG pipeline: retrieve → generate → verify citations.
 
-    Graceful failure: if no chunks are returned above the confidence threshold,
-    returns `answered=False` without making an LLM call.
+    Graceful failure: the system prompt tells the model to decline with a fixed
+    sentence when the retrieved text cannot answer the question, and
+    `answered` is False when it does. If retrieval returns nothing at all,
+    the pipeline declines without calling the LLM.
     """
     start = time.time()
 
     # 1. Retrieve
     chunks = search(query, top_k=top_k, filters=filters)
 
-    # 2. Confidence gate — ChromaDB returns L2 distances (lower = better).
-    #    For hybrid/RRF results the score is an RRF score (higher = better).
-    #    Use chunk count as a simple proxy: if nothing was retrieved, fail gracefully.
+    # 2. Nothing retrieved: decline without an LLM call
     if not chunks:
         elapsed_ms = (time.time() - start) * 1000
         logger.info(f"No chunks retrieved for query: {query[:80]!r} — graceful decline.")
@@ -94,7 +95,7 @@ def answer_query(
     elapsed_ms = (time.time() - start) * 1000
     response = QueryResponse(
         query=query,
-        answered=True,
+        answered=not detect_decline(llm_response.answer),
         answer=llm_response.answer,
         retrieved_chunks=chunks,
         citations=citations,

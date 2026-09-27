@@ -11,6 +11,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import streamlit as st
 
+from src import config
 from src.api.query import answer_query
 
 st.set_page_config(
@@ -24,6 +25,7 @@ st.caption(
     "Ask questions about the EU AI Act and receive grounded, cited answers "
     "from the official regulatory text."
 )
+st.caption(f"**Corpus:** {config.CORPUS_DESCRIPTION}")
 
 # ---------------------------------------------------------------------------
 # Disclaimer banner
@@ -39,10 +41,12 @@ st.warning(
 st.divider()
 
 example_queries = [
-    "What risk category does real-time biometric identification in public spaces fall under?",
+    "What does ‘AI literacy’ mean in the AI Act?",
     "What quality management obligations apply to providers of high-risk AI systems?",
     "What transparency obligations apply to AI systems that interact with natural persons?",
     "What conformity assessment steps must a provider complete before placing a high-risk AI system on the EU market?",
+    # Not in the corpus: the system should decline
+    "Which authority supervises the AI Act in Norway?",
 ]
 
 with st.expander("Example queries"):
@@ -59,7 +63,9 @@ query = st.text_area(
 
 col1, col2 = st.columns([1, 4])
 with col1:
-    top_k = st.slider("Chunks to retrieve", min_value=1, max_value=10, value=5)
+    top_k = st.slider(
+        "Chunks to retrieve", min_value=1, max_value=10, value=config.TOP_K_RETRIEVAL
+    )
 
 submit = st.button("Ask", type="primary", disabled=not query.strip())
 
@@ -73,9 +79,9 @@ if submit and query.strip():
     st.divider()
 
     if not response.answered:
-        st.error(
-            "The regulatory corpus does not contain sufficient information to "
-            "answer this question with confidence."
+        st.info(
+            "**Declined.** The retrieved passages do not answer this question, "
+            "so the system says so instead of guessing."
         )
         st.markdown(response.answer or "")
     else:
@@ -87,17 +93,21 @@ if submit and query.strip():
         m_cols = st.columns(4)
         m_cols[0].metric("Citations found", len(response.citations))
         m_cols[1].metric(
-            "Citation accuracy",
+            "Citations in retrieved text",
             f"{response.citation_verification.accuracy:.0%}"
             if response.citation_verification else "—",
         )
         m_cols[2].metric("Latency", f"{response.latency_ms:.0f}ms")
         m_cols[3].metric("Cost", f"${response.cost_usd:.5f}")
 
-        # Citations list
-        if response.citations:
-            st.markdown(f"**Citations extracted:** {', '.join(response.citations)}")
+        # Citation check
+        if response.citation_verification and response.citations:
+            checked =[f"{c} ✓" for c in response.citation_verification.matched] + [
+                f"{c} ✗ not in the retrieved passages" for c in response.citation_verification.missing
+            ]
+            st.markdown("**Citation check:** " + ", ".join(checked))
 
+    if response.retrieved_chunks:
         # Retrieved source chunks
         st.divider()
         st.subheader("Retrieved source passages")

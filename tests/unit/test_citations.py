@@ -3,8 +3,11 @@
 import pytest
 from src.generation.citations import (
     CitationVerification,
+    ProvisionRef,
     detect_bad_framing,
+    detect_decline,
     extract_citations,
+    parse_reference,
     verify_citations,
 )
 from src.retrieval.models import RetrievalResult
@@ -88,6 +91,67 @@ class TestVerifyCitations:
         assert result.accuracy == 0.5
         assert "Article 6" in result.matched
         assert "Article 99" in result.missing
+
+    def test_paragraph_citation_matches_whole_article_chunk(self):
+        result = verify_citations(["Article 17(1)(a)"], [_make_result("Article 17")])
+        assert result.accuracy == 1.0
+
+    @pytest.mark.parametrize(
+        "cited, retrieved",
+        [
+            ("Article 13", "Article 1"),
+            ("Article 1", "Article 13"),
+            ("Article 52(1)", "Article 5"),
+            ("Annex III", "Annex I"),
+            ("Recital 42", "Recital 4"),
+        ],
+    )
+    def test_string_prefix_is_not_a_match(self, cited, retrieved):
+        # The original check compared strings by prefix and passed all of these.
+        result = verify_citations([cited], [_make_result(retrieved)])
+        assert result.accuracy == 0.0
+        assert result.missing == [cited]
+
+    def test_definition_citations(self):
+        chunks = [_make_result("Article 3(56)")]
+        assert verify_citations(["Article 3(56)"], chunks).accuracy == 1.0
+        assert verify_citations(["Article 3"], chunks).accuracy == 1.0
+        assert verify_citations(["Article 3(12)"], chunks).accuracy == 0.0
+
+    def test_unparseable_chunk_labels_ignored(self):
+        result = verify_citations(["Article 1"], [_make_result("Preamble")])
+        assert result.accuracy == 0.0
+
+
+class TestParseReference:
+    def test_article_with_path(self):
+        assert parse_reference("Article 17(1)(a)") == ProvisionRef("article", "17", ("1", "a"))
+
+    def test_annex_with_section(self):
+        assert parse_reference("Annex VIII, Section A") == ProvisionRef("annex", "VIII", ("section a",))
+
+    def test_recital(self):
+        assert parse_reference("Recital 42") == ProvisionRef("recital", "42")
+
+    def test_not_a_reference(self):
+        assert parse_reference("Preamble") is None
+
+    def test_extracts_definition_and_nested_points(self):
+        citations = extract_citations("See Article 3(56) and Article 5(1)(h)(iii).")
+        assert citations == ["Article 3(56)", "Article 5(1)(h)(iii)"]
+
+
+class TestDetectDecline:
+    def test_prompt_decline_sentence(self):
+        answer = (
+            "The provided regulatory text does not contain sufficient information to answer "
+            "this question. National implementation acts may contain the answer."
+        )
+        assert detect_decline(answer) is True
+
+    def test_normal_answer(self):
+        answer = "Providers must establish a risk management system (Article 9(1))."
+        assert detect_decline(answer) is False
 
 
 class TestDetectBadFraming:

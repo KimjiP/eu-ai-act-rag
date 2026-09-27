@@ -83,6 +83,7 @@ async def query_endpoint(request: QueryRequest) -> dict:
         "latency_ms": round(response.latency_ms, 1),
         "cost_usd": round(response.cost_usd, 6),
         "experiment_id": response.experiment_id,
+        "corpus": config.CORPUS_DESCRIPTION,
     }
 
 

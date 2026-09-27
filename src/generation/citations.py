@@ -1,7 +1,7 @@
-"""Citation extraction and verification.
+"""Citation extraction and verification, plus the other checks run on every answer.
 
-Extracts article/annex/recital citations from generated answers and
-verifies them against the retrieved chunks that were passed to the LLM.
+Extracts article/annex/recital citations from generated answers and verifies
+them against the retrieved chunks that were passed to the LLM.
 """
 
 import re
@@ -9,11 +9,22 @@ from dataclasses import dataclass, field
 
 from src.retrieval.models import RetrievalResult
 
-# Matches: Article 17, Article 17(1), Article 17(1)(a), Annex III, Annex III Section 2, Recital 42
+# Matches: Article 17, Article 17(1), Article 17(1)(a), Article 5(1)(h)(iii), Article 3(56),
+# Annex III, Annex III, Section 2, Recital 42.
 # No trailing \b because citations often end with ')' which is a non-word character.
 _CITATION_PATTERN = re.compile(
-    r"\b(Article\s+\d+(?:\(\d+\))?(?:\([a-z]\))?|Annex\s+[IVX]+(?:[,\s]+Section\s+\d+)?|Recital\s+\d+)",
+    r"\b(Article\s+\d+(?:\((?:\d+|[a-z]{1,4})\))*"
+    r"|Annex\s+[IVX]+(?:[,\s]+Section\s+[0-9A-Z]\b)?"
+    r"|Recital\s+\d+)",
     re.IGNORECASE,
+)
+
+_REFERENCE = re.compile(r"^(Article|Annex|Recital)\s+(\d+|[IVXLC]+)(.*)$", re.IGNORECASE)
+_PATH_PART = re.compile(r"\((\d+|[a-z]{1,4})\)|Section\s+(\w+)", re.IGNORECASE)
+
+# The sentence the system prompt tells the model to use when the context cannot answer
+_DECLINE_PATTERN = re.compile(
+    r"does not contain (sufficient|enough) information to answer", re.IGNORECASE
 )
 
 # Banned phrases indicating bad framing (the LLM thinks the user provided the docs)
@@ -28,12 +39,47 @@ _BAD_FRAMING_PATTERNS = [
 ]
 
 
+@dataclass(frozen=True)
+class ProvisionRef:
+    """A reference such as Article 17(1)(a): the provision, and the path below it."""
+
+    kind: str  # "article" | "annex" | "recital"
+    number: str  # "17", "III", "42"
+    path: tuple[str, ...] = ()  # ("1", "a") for Article 17(1)(a)
+
+    def overlaps(self, other: "ProvisionRef") -> bool:
+        """True if one reference contains the other, e.g. Article 17 and Article 17(1).
+
+        Article 3(12) and Article 3(56) do not overlap, and neither do Article 1
+        and Article 13.
+        """
+        if (self.kind, self.number) != (other.kind, other.number):
+            return False
+        shorter, longer = sorted((self.path, other.path), key=len)
+        return longer[: len(shorter)] == shorter
+
+
 @dataclass
 class CitationVerification:
     accuracy: float  # fraction of extracted citations matched to retrieved chunks
     matched: list[str] = field(default_factory=list)
     missing: list[str] = field(default_factory=list)  # cited but not in chunks
     bad_framing_detected: bool = False
+
+
+def parse_reference(text: str) -> ProvisionRef | None:
+    """Parse "Article 17(1)(a)", "Annex III, Section 2" or "Recital 42" (None otherwise)."""
+    m = _REFERENCE.match(text.strip())
+    if not m:
+        return None
+    kind = m[1].lower()
+    number = m[2].upper() if kind == "annex" else m[2]
+    if kind != "annex" and not number.isdigit():
+        return None
+    path = tuple(
+        (paren or f"section {section}").lower() for paren, section in _PATH_PART.findall(m[3])
+    )
+    return ProvisionRef(kind, number, path)
 
 
 def extract_citations(answer: str) -> list[str]:
@@ -45,28 +91,23 @@ def verify_citations(
     citations: list[str],
     chunks: list[RetrievalResult],
 ) -> CitationVerification:
-    """Check each extracted citation against the retrieved chunks.
+    """Check each extracted citation against the labels of the retrieved chunks.
 
-    A citation is considered "matched" if the cited article/annex/recital
-    label appears in any chunk's article_number field (case-insensitive,
-    prefix match to handle "Article 17" matching "Article 17(1)").
+    A citation matches a chunk when both refer to the same provision and one
+    contains the other: "Article 17(1)" matches a chunk labelled "Article 17",
+    and "Article 3" matches "Article 3(56)". "Article 13" never matches
+    "Article 1", and "Annex III" never matches "Annex I".
     """
-    # Build set of normalised article labels from retrieved chunks
-    chunk_labels = set()
-    for chunk in chunks:
-        if chunk.article_number:
-            chunk_labels.add(chunk.article_number.lower().strip())
+    chunk_refs = [
+        ref for chunk in chunks if chunk.article_number
+        if (ref := parse_reference(chunk.article_number))
+    ]
 
     matched: list[str] = []
     missing: list[str] = []
-
     for citation in citations:
-        citation_norm = citation.lower().strip()
-        # Accept if any chunk label starts with the cited reference (or vice versa)
-        if any(
-            citation_norm.startswith(label) or label.startswith(citation_norm)
-            for label in chunk_labels
-        ):
+        ref = parse_reference(citation)
+        if ref and any(ref.overlaps(chunk_ref) for chunk_ref in chunk_refs):
             matched.append(citation)
         else:
             missing.append(citation)
@@ -79,6 +120,11 @@ def verify_citations(
         matched=matched,
         missing=missing,
     )
+
+
+def detect_decline(answer: str) -> bool:
+    """Return True if the answer uses the system prompt's decline sentence."""
+    return bool(_DECLINE_PATTERN.search(answer))
 
 
 def detect_bad_framing(answer: str) -> bool:
