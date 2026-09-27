@@ -54,3 +54,20 @@ Context passages:
 
 Answer: {answer}
 """
+
+COMPLETENESS_JUDGE_PROMPT = """You are an evaluation judge checking whether an answer states the facts that a complete answer must contain.
+
+These facts come from the text of the EU AI Act, so this checks the answer against the Act itself, not against whatever passages the system happened to retrieve.
+
+For each numbered fact, decide whether the answer states it. Wording may differ; the meaning must be the same. A fact the answer contradicts, or only hints at, is not stated.
+
+Respond with ONLY a JSON object in this exact format:
+{{"covered": [<true or false for fact 1>, <true or false for fact 2>, ...], "reasoning": "<one sentence on what is missing, if anything>"}}
+
+Question: {query}
+
+Facts a complete answer must state:
+{facts}
+
+Answer: {answer}
+"""

@@ -20,20 +20,18 @@ uv add <package>
 # All scripts must be run as modules from the project root (never as direct file paths)
 # so that `src` and `eval` are importable.
 
-# Ingest PDFs into ChromaDB
+# Ingest PDFs into ChromaDB (corpus v2 by default)
 uv run python -m src.ingestion.pipeline
 
-# Generate golden dataset candidates
-uv run python -m eval.golden_dataset.generate
+# Rebuild golden dataset v2 from v1 (labels and answer keys are reviewed data in the script/JSON)
+uv run python -m eval.golden_dataset.build_v2
 
-# Run retrieval evaluation
-uv run python -m eval.metrics.run_retrieval_eval --split dev
+# Run the evaluation: retrieval, answers and LLM judges, one answer per question
+uv run python -m eval.run_eval --split dev --tag <name>
+uv run python -m eval.run_eval --split test --tag <name> --no-judges
 
-# Run response evaluation
-uv run python -m eval.metrics.run_response_eval --split dev
-
-# Run LLM-judge evaluation
-uv run python -m eval.metrics.run_judge_eval --split dev
+# Measure the original system with the same evaluation
+RAG_CORPUS_VERSION=v1 RAG_RERANK_CANDIDATES=0 uv run python -m eval.run_eval --split test --tag v1-original
 
 # Run the FastAPI server
 uv run uvicorn src.api.main:app --reload
@@ -104,5 +102,7 @@ Every ChromaDB chunk stores: `article_number`, `section_type` (obligation/defini
 - **Framework-agnostic**: Direct API calls only — no LangChain/LlamaIndex. Keeps component behavior transparent and experiments easier to isolate.
 - **One variable per experiment**: Experiment log tracks hypothesis, variable changed, and metric deltas. Never change multiple variables simultaneously.
 - **Golden dataset is the most important artifact**: All pipeline improvements are measured against it; never merge changes that regress retrieval or response metrics.
+- **Ground truth never comes from chunk labels**: gold answers are provisions ("Article 9", "Article 3(56)"), and `eval/provisions.py` maps any passage to the provisions its text contains. The v1 evaluation trusted labels and missed a parser bug that mislabelled a third of the corpus.
+- **Chunk units**: one per article, recital and annex, plus one per definition in Article 3 ("Article 3(56)"). The parser only accepts a header as a whole line, in its document region, and in sequence; see `src/ingestion/parser.py`.
 - **Classic RAG first**: No agentic RAG until baseline failure modes are characterized.
 - **MVP corpus**: EU AI Act main text + Annexes I–XIII + Recitals only. Commission guidance documents deferred until baseline metrics are proven.
