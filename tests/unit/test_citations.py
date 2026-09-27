@@ -140,6 +140,13 @@ class TestParseReference:
         citations = extract_citations("See Article 3(56) and Article 5(1)(h)(iii).")
         assert citations == ["Article 3(56)", "Article 5(1)(h)(iii)"]
 
+    def test_skips_references_to_other_acts(self):
+        answer = (
+            "The Commission informs the committee referred to in Article 22 of Regulation (EU) "
+            "No 1025/2012 (Article 41(2)), based on Article 114 TFEU and Article 39 of the Charter."
+        )
+        assert extract_citations(answer) == ["Article 41(2)"]
+
 
 class TestDetectDecline:
     def test_prompt_decline_sentence(self):

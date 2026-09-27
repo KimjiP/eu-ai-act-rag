@@ -33,7 +33,7 @@ class CrossEncoderReranker:
             return results
 
         pairs = [(query, r.text) for r in results]
-        scores = self._model.predict(pairs)
+        scores = self._model.predict(pairs, show_progress_bar=False)
 
         scored = sorted(zip(results, scores), key=lambda x: x[1], reverse=True)
 

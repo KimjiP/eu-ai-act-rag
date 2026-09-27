@@ -19,6 +19,14 @@ _CITATION_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
+# Text right after a citation that makes it a reference to another legal act,
+# e.g. "Article 22 of Regulation (EU) No 1025/2012", "Article 16 TFEU"
+_OTHER_ACT = re.compile(
+    r"^,?\s*(?:(?:of|in)\s+(?:that\s+|the\s+)?(?:Regulation|Directive|Decision|Treaty|Charter|Council)"
+    r"|(?:TFEU|TEU)\b)",
+    re.IGNORECASE,
+)
+
 _REFERENCE = re.compile(r"^(Article|Annex|Recital)\s+(\d+|[IVXLC]+)(.*)$", re.IGNORECASE)
 _PATH_PART = re.compile(r"\((\d+|[a-z]{1,4})\)|Section\s+(\w+)", re.IGNORECASE)
 
@@ -83,8 +91,18 @@ def parse_reference(text: str) -> ProvisionRef | None:
 
 
 def extract_citations(answer: str) -> list[str]:
-    """Return deduplicated list of citation strings found in the answer text."""
-    return list(dict.fromkeys(m.group(0) for m in _CITATION_PATTERN.finditer(answer)))
+    """Return deduplicated list of AI Act citations found in the answer text.
+
+    References to other legal acts ("Article 22 of Regulation (EU) No 1025/2012")
+    are skipped: they are not claims about the AI Act's own articles.
+    """
+    return list(
+        dict.fromkeys(
+            m.group(0)
+            for m in _CITATION_PATTERN.finditer(answer)
+            if not _OTHER_ACT.match(answer[m.end() :])
+        )
+    )
 
 
 def verify_citations(
