@@ -2,6 +2,11 @@
 
 Every tuneable value lives here. Changing a variable for an experiment
 means changing one line in this file only — never hard-code values elsewhere.
+
+Two values can also be set from the environment, so the evaluation can run the
+original system and the corrected one from the same code:
+    RAG_CORPUS_VERSION=v1     the original parse, whose chunk labels are known to be wrong
+    RAG_RERANK_CANDIDATES=0   rerank only the top_k results, as originally built
 """
 
 import os
@@ -34,16 +39,17 @@ LLM_MAX_TOKENS: int = 1024
 # ---------------------------------------------------------------------------
 # Retrieval
 # ---------------------------------------------------------------------------
-TOP_K_RETRIEVAL: int = 5
-# ChromaDB returns L2 distances; lower = more similar.
-# Results with distance > this threshold are treated as low-confidence.
-CONFIDENCE_THRESHOLD: float = 1.5
+# Chunks passed to the LLM. E3 found 3 better than 5 (citation completeness, cost).
+TOP_K_RETRIEVAL: int = 3
 # "dense" | "hybrid"
 RETRIEVAL_STRATEGY: str = "hybrid"
-# BM25 / dense fusion weight: 0.0 = BM25 only, 1.0 = dense only
+# Not used by the RRF fusion in hybrid.py, which weights both rankings equally.
 HYBRID_ALPHA: float = 0.5
 RERANKER_ENABLED: bool = True
 RERANKER_MODEL: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"
+# Hybrid-search candidates the reranker re-scores before keeping top_k.
+# 0 = rerank only the top_k results (the original behaviour).
+RERANK_CANDIDATES: int = int(os.environ.get("RAG_RERANK_CANDIDATES", "20"))
 
 # ---------------------------------------------------------------------------
 # Prompts
@@ -51,9 +57,18 @@ RERANKER_MODEL: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 PROMPT_VERSION: str = "v1"
 
 # ---------------------------------------------------------------------------
-# ChromaDB
+# Corpus
 # ---------------------------------------------------------------------------
-CHROMA_COLLECTION_NAME: str = "eu_ai_act_v1"
+# v2: corrected structural parse (September 2026). v1: the original parse, kept
+# only so the evaluation can measure the original system.
+CORPUS_VERSION: str = os.environ.get("RAG_CORPUS_VERSION", "v2")
+CHROMA_COLLECTION_NAME: str = f"eu_ai_act_{CORPUS_VERSION}"
+# Which legal text the corpus holds, shown next to every answer
+CORPUS_DESCRIPTION: str = (
+    "Regulation (EU) 2024/1689 as published in the Official Journal on 12 July 2024. "
+    "Later amendments, including Regulation (EU) 2026/1744 (the Digital Omnibus on AI), "
+    "are not included."
+)
 
 # ---------------------------------------------------------------------------
 # Experiment tracking
@@ -71,7 +86,7 @@ CHROMA_PERSIST_DIR: Path = ROOT_DIR / "data" / "chroma"
 EXPERIMENTS_DIR: Path = ROOT_DIR / "experiments"
 EVAL_DIR: Path = ROOT_DIR / "eval"
 GOLDEN_DATASET_PATH: Path = EVAL_DIR / "golden_dataset" / "golden_dataset.json"
-CHUNKS_JSON_PATH: Path = DATA_PROCESSED_DIR / "chunks_v1.json"
+CHUNKS_JSON_PATH: Path = DATA_PROCESSED_DIR / f"chunks_{CORPUS_VERSION}.json"
 QUERY_LOG_PATH: Path = EXPERIMENTS_DIR / "query_log.jsonl"
 EXPERIMENT_LOG_PATH: Path = EXPERIMENTS_DIR / "experiment_log.json"
 

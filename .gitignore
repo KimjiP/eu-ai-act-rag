@@ -19,3 +19,5 @@ llm/
 # Large data files
 data/chroma/
 data/raw/
+# Runtime query log (written on every query)
+experiments/query_log.jsonl
