@@ -21,6 +21,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 import streamlit as st
 
+from eval.compare_runs import format_value
 from src import config
 
 EXPERIMENTS_DIR = config.EXPERIMENTS_DIR
@@ -125,7 +126,7 @@ st.subheader("Summary")
 header = "| Metric | " + " | ".join(f"{k}: {r['tag']} ({r['split']})" for k, r in runs.items()) + " |"
 lines = [header, "|---|" + "---|" * len(runs)]
 for label, section, key in SUMMARY_ROWS:
-    values = [str(r["summary"].get(section, {}).get(key, "—")) for r in runs.values()]
+    values = [format_value(key, r["summary"].get(section, {}).get(key)) for r in runs.values()]
     lines.append(f"| {label} | " + " | ".join(values) + " |")
 st.markdown("\n".join(lines))
 for key, run in runs.items():
