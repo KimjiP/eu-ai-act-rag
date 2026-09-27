@@ -2,7 +2,25 @@
 
 This document describes how the ground-truth evaluation dataset is built for the EU AI Act RAG pipeline. The dataset is the single most important artifact in the project — all retrieval and response metrics are only as meaningful as the quality of this file.
 
-## Overview
+## Version 2 (September 2026)
+
+`golden_dataset.json` is now version 2, built from version 1 by [eval/golden_dataset/build_v2.py](../eval/golden_dataset/build_v2.py). Version 1 is kept as `golden_dataset_v1.json`.
+
+**Why v1 had to change.** The v1 labels came from the pipeline being evaluated. Stage 2 below ran the retriever, and Claude Haiku picked the relevant chunks from its top 5, seeing only the first 600 characters of each. Retrieval was therefore graded against the retriever's own earlier choices, and when the parser mislabelled chunks, the labels inherited the mistakes: 19 of 44 questions pointed at chunks whose label did not match their text. The answer elements were written from the same 600-character excerpts. One answer key said Article 9 "does not provide all four steps" of the risk management system; the Act lists all four, but step (b) starts after character 600. The test split had no unanswerable questions.
+
+**What v2 is.**
+
+- **Labels are provisions**, such as "Article 9" or "Article 3(56)", not chunk hashes. Each was set by reading the question against the full text of the corrected parse, starting from the provisions that v1's chosen chunks actually contain (found by text, see [eval/provisions.py](../eval/provisions.py)). Provision labels survive any change to chunking.
+- **Answer elements** were regenerated with Claude Opus 5 from the full text of the gold provisions, then reviewed: one element that inverted Article 50(1) was corrected, and facts the question does not ask about were removed, so a focused answer is not penalised. 126 elements across 44 questions.
+- **Ten unanswerable questions** were added, six in dev and four in test, each confirmed absent from the corpus text (for example, which authority supervises the AI Act in Norway).
+- **q035** ("Does Article 4 specify the minimum number of training hours?") is now answerable: Article 4 answers it (it does not specify one).
+- **Splits** are unchanged for the original 44 questions: 31 dev, 13 test. With the new questions: 37 dev, 17 test.
+
+Labels and answer elements were reviewed by Claude against the full text, not yet by a person.
+
+The rest of this document describes how version 1 was built.
+
+## Overview (version 1)
 
 The pipeline has four stages:
 
