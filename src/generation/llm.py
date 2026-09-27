@@ -13,16 +13,20 @@ from src.retrieval.models import RetrievalResult
 
 logger = logging.getLogger(__name__)
 
-# USD per token (approximate; update if pricing changes)
+# USD per 1M tokens, Anthropic list prices as of September 2026
 _INPUT_PRICE_PER_1M = {
     "claude-sonnet-4-5": 3.0,
-    "claude-haiku-4-5-20251001": 0.25,
-    "claude-opus-4-6": 15.0,
+    "claude-sonnet-5": 2.0,
+    "claude-haiku-4-5": 1.0,
+    "claude-haiku-4-5-20251001": 1.0,
+    "claude-opus-5": 5.0,
 }
 _OUTPUT_PRICE_PER_1M = {
     "claude-sonnet-4-5": 15.0,
-    "claude-haiku-4-5-20251001": 1.25,
-    "claude-opus-4-6": 75.0,
+    "claude-sonnet-5": 10.0,
+    "claude-haiku-4-5": 5.0,
+    "claude-haiku-4-5-20251001": 5.0,
+    "claude-opus-5": 25.0,
 }
 
 _client: anthropic.Anthropic | None = None
@@ -73,7 +77,8 @@ def generate_response(
     user_prompt = build_user_prompt(query, chunks)
 
     start = time.time()
-    for attempt in range(4):
+    attempts = 4
+    for attempt in range(attempts):
         try:
             response = _get_client().messages.create(
                 model=model,
@@ -84,14 +89,16 @@ def generate_response(
             )
             break
         except RateLimitError:
-            wait = 60 * (attempt + 1)  # 60s, 120s, 180s, 240s
-            logger.warning(f"Rate limit hit — waiting {wait}s before retry {attempt + 1}/3 ...")
+            if attempt == attempts - 1:
+                raise
+            wait = 60 * (attempt + 1)  # 60s, 120s, 180s
+            logger.warning(f"Rate limit hit — waiting {wait}s before retry {attempt + 1}/{attempts - 1} ...")
             time.sleep(wait)
-    else:
-        raise RateLimitError  # re-raise after all retries exhausted
     latency_ms = (time.time() - start) * 1000
 
-    answer = response.content[0].text
+    answer = "".join(block.text for block in response.content if block.type == "text")
+    if response.stop_reason == "max_tokens":
+        logger.warning(f"Answer hit max_tokens ({max_tokens}) and is truncated: {query[:60]!r}")
     input_tokens = response.usage.input_tokens
     output_tokens = response.usage.output_tokens
 
