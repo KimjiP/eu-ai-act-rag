@@ -3,10 +3,11 @@
 Every tuneable value lives here. Changing a variable for an experiment
 means changing one line in this file only — never hard-code values elsewhere.
 
-Two values can also be set from the environment, so the evaluation can run the
-original system and the corrected one from the same code:
+Three values can also be set from the environment, so the evaluation can run the
+original system and each step of the fix from the same code:
     RAG_CORPUS_VERSION=v1     the original parse, whose chunk labels are known to be wrong
     RAG_RERANK_CANDIDATES=0   rerank only the top_k results, as originally built
+    RAG_RECITAL_PENALTY=0     rank recitals like any other passage
 """
 
 import os
@@ -50,6 +51,11 @@ RERANKER_MODEL: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 # Hybrid-search candidates the reranker re-scores before keeping top_k.
 # 0 = rerank only the top_k results (the original behaviour).
 RERANK_CANDIDATES: int = int(os.environ.get("RAG_RERANK_CANDIDATES", "20"))
+# Subtracted from recitals' reranker scores, so the operative text (articles,
+# definitions, annexes) ranks first. Recitals are short, plain-language and
+# fully visible to the 512-token reranker, so they outscored the articles that
+# carry the obligations. Tuned on the dev split (E9); 0 disables it.
+RECITAL_PENALTY: float = float(os.environ.get("RAG_RECITAL_PENALTY", "3.0"))
 
 # ---------------------------------------------------------------------------
 # Prompts

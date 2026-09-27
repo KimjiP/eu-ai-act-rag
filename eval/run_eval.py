@@ -202,7 +202,8 @@ def main() -> None:
 
     logger.info(
         f"Evaluating {len(questions)} '{args.split}' questions: corpus {config.CORPUS_VERSION}, "
-        f"rerank candidates {config.RERANK_CANDIDATES}, top_k {args.top_k}"
+        f"rerank candidates {config.RERANK_CANDIDATES}, recital penalty {config.RECITAL_PENALTY}, "
+        f"top_k {args.top_k}"
     )
     records = []
     for i, item in enumerate(questions, 1):
@@ -222,6 +223,7 @@ def main() -> None:
                 "config": {
                     "corpus_version": config.CORPUS_VERSION,
                     "rerank_candidates": config.RERANK_CANDIDATES,
+                    "recital_penalty": config.RECITAL_PENALTY,
                     "top_k": args.top_k,
                     "llm_model": config.LLM_MODEL,
                     "prompt_version": config.PROMPT_VERSION,

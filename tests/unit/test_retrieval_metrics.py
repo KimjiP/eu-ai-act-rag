@@ -62,3 +62,22 @@ class TestProvisionMatching:
     def test_contains_any(self):
         assert contains_any(["Recital 12", "Article 9"], ["Article 9(2)"])
         assert not contains_any(["Article 90"], ["Article 9"])
+
+
+class TestOperativeTextFirst:
+    def test_recital_penalty_reorders_and_reranks(self, monkeypatch):
+        from src import config
+        from src.retrieval import _operative_text_first
+        from src.retrieval.models import RetrievalResult
+
+        def result(label, section_type, score):
+            return RetrievalResult(chunk_id=label, text="", score=score, article_number=label,
+                                   section_type=section_type, title="", parent_document="", rank=9)
+
+        monkeypatch.setattr(config, "RECITAL_PENALTY", 3.0)
+        results = [result("Recital 66", "recital", 5.0), result("Article 17", "general", 3.0),
+                   result("Recital 81", "recital", 9.0)]
+        ranked = _operative_text_first(results, top_k=2)
+        assert [r.article_number for r in ranked] == ["Recital 81", "Article 17"]
+        assert [r.rank for r in ranked] == [0, 1]
+        assert ranked[0].score == 9.0  # the displayed score is the reranker's own

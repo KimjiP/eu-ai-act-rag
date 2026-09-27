@@ -5,6 +5,8 @@ individual strategy modules directly. Changing the active strategy for
 an experiment means updating config.RETRIEVAL_STRATEGY only.
 """
 
+import dataclasses
+
 from src import config
 from src.retrieval.models import RetrievalResult
 
@@ -22,7 +24,8 @@ def search(
 
     If config.RERANKER_ENABLED is True, the primary step fetches
     config.RERANK_CANDIDATES results and the cross-encoder keeps the best top_k,
-    so it can promote a chunk the first step ranked below top_k.
+    so it can promote a chunk the first step ranked below top_k. Recitals are
+    ranked with config.RECITAL_PENALTY subtracted from their score.
     """
     pool = max(top_k, config.RERANK_CANDIDATES) if config.RERANKER_ENABLED else top_k
 
@@ -38,6 +41,17 @@ def search(
     if config.RERANKER_ENABLED:
         from src.retrieval.reranker import get_reranker
 
-        results = get_reranker().rerank(query, results, top_k=top_k)
+        results = get_reranker().rerank(query, results, top_k=len(results))
+        results = _operative_text_first(results, top_k)
 
     return results
+
+
+def _operative_text_first(results: list[RetrievalResult], top_k: int) -> list[RetrievalResult]:
+    """Keep the top_k after subtracting config.RECITAL_PENALTY from recitals' scores."""
+
+    def ranking_score(result: RetrievalResult) -> float:
+        return result.score - (config.RECITAL_PENALTY if result.section_type == "recital" else 0.0)
+
+    ranked = sorted(results, key=ranking_score, reverse=True)[:top_k]
+    return [dataclasses.replace(result, rank=i) for i, result in enumerate(ranked)]
