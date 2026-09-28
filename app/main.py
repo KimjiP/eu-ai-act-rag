@@ -102,10 +102,18 @@ if submit and query.strip():
 
         # Citation check
         if response.citation_verification and response.citations:
-            checked =[f"{c} ✓" for c in response.citation_verification.matched] + [
-                f"{c} ✗ not in the retrieved passages" for c in response.citation_verification.missing
-            ]
+            verification = response.citation_verification
+            checked = [f"{c} ✓" for c in verification.matched]
+            for c in verification.missing:
+                if c in verification.cross_referenced:
+                    checked.append(f"{c} ↪ named in a retrieved passage")
+                else:
+                    checked.append(f"{c} ✗ not in the retrieved passages")
             st.markdown("**Citation check:** " + ", ".join(checked))
+            st.caption(
+                "✓ the cited provision's text was retrieved. ↪ the retrieved text refers to it, "
+                "but its own text was not retrieved. ✗ neither."
+            )
 
     if response.retrieved_chunks:
         # Retrieved source chunks

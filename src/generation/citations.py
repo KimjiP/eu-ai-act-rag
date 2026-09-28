@@ -74,6 +74,9 @@ class CitationVerification:
     accuracy: float  # fraction of extracted citations matched to retrieved chunks
     matched: list[str] = field(default_factory=list)
     missing: list[str] = field(default_factory=list)  # cited but not in chunks
+    # the subset of `missing` that a retrieved chunk names, e.g. Article 17 refers to
+    # "the risk management system referred to in Article 9"
+    cross_referenced: list[str] = field(default_factory=list)
     bad_framing_detected: bool = False
 
 
@@ -134,12 +137,23 @@ def verify_citations(
 
     total = len(citations)
     accuracy = len(matched) / total if total > 0 else 1.0  # no citations = no error
+    context = "\n".join(chunk.text for chunk in chunks)
 
     return CitationVerification(
         accuracy=accuracy,
         matched=matched,
         missing=missing,
+        cross_referenced=[c for c in missing if names_provision(context, c)],
     )
+
+
+def names_provision(text: str, citation: str) -> bool:
+    """True if `text` refers to the cited provision by number, e.g. "... referred to in Article 72"."""
+    ref = parse_reference(citation)
+    if ref is None:
+        return False
+    word = {"article": "Article", "annex": "Annex", "recital": "Recital"}[ref.kind]
+    return bool(re.search(rf"\b{word}\s+{ref.number}(?![\dIVXLC])", text, re.IGNORECASE))
 
 
 def detect_decline(answer: str) -> bool:

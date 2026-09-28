@@ -118,6 +118,14 @@ class TestVerifyCitations:
         assert verify_citations(["Article 3"], chunks).accuracy == 1.0
         assert verify_citations(["Article 3(12)"], chunks).accuracy == 0.0
 
+    def test_cross_referenced_citation_is_reported_separately(self):
+        chunk = _make_result("Article 17")
+        chunk.text = "(g) the risk management system referred to in Article 9;"
+        result = verify_citations(["Article 17(1)(g)", "Article 9", "Article 50"], [chunk])
+        assert result.matched == ["Article 17(1)(g)"]
+        assert result.missing == ["Article 9", "Article 50"]
+        assert result.cross_referenced == ["Article 9"]
+
     def test_unparseable_chunk_labels_ignored(self):
         result = verify_citations(["Article 1"], [_make_result("Preamble")])
         assert result.accuracy == 0.0
