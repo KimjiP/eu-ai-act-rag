@@ -1,0 +1,2249 @@
+{
+  "tag": "v2-parser-only",
+  "split": "test",
+  "run_at": "2026-09-27T20:51:03+00:00",
+  "config": {
+    "corpus_version": "v2",
+    "rerank_candidates": 0,
+    "top_k": 3,
+    "llm_model": "claude-sonnet-4-5",
+    "prompt_version": "v1",
+    "embedding_model": "text-embedding-3-small",
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "judge_model": null,
+    "golden_dataset": "golden_dataset.json"
+  },
+  "summary": {
+    "n_questions": 17,
+    "n_answerable": 13,
+    "n_unanswerable": 4,
+    "retrieval": {
+      "recall_at_1": 0.692,
+      "recall_at_3": 0.769,
+      "recall_at_5": 0.923,
+      "mrr": 0.769,
+      "precision_at_5": 0.231
+    },
+    "answers": {
+      "unanswerable_declined": 1.0,
+      "answerable_declined": 0.077,
+      "citations_grounded": 0.839,
+      "citations_wrong_label": 0.0,
+      "citations_cross_reference": 0.161,
+      "citations_unsupported": 0.0,
+      "n_citations": 62,
+      "citation_completeness": 0.59,
+      "bad_framing_rate": 0.0,
+      "avg_context_chars": 7484.824,
+      "avg_cost_usd": 0.01096,
+      "avg_latency_ms": 7879
+    }
+  },
+  "per_query": [
+    {
+      "query_id": "q001",
+      "query": "What are the four steps that must be included in a risk management system for high-risk AI systems?",
+      "is_unanswerable": false,
+      "gold_provisions": [
+        "Article 9"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 9",
+          "contains": [
+            "Article 9"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 4159
+        },
+        {
+          "rank": 2,
+          "label": "Recital 65",
+          "contains": [
+            "Recital 65"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2465
+        },
+        {
+          "rank": 3,
+          "label": "Article 15",
+          "contains": [
+            "Article 15"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2408
+        },
+        {
+          "rank": 4,
+          "label": "Article 72",
+          "contains": [
+            "Article 72"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2318
+        },
+        {
+          "rank": 5,
+          "label": "Article 13",
+          "contains": [
+            "Article 13"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 3123
+        }
+      ],
+      "retrieval": {
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "precision_at_5": 0.2
+      },
+      "answer": {
+        "text": "According to the EU AI Act, the risk management system for high-risk AI systems must comprise the following four steps (Article 9(2)):\n\n1. **Identification and analysis of risks**: The identification and analysis of the known and the reasonably foreseeable risks that the high-risk AI system can pose to health, safety or fundamental rights when the high-risk AI system is used in accordance with its intended purpose (Article 9(2)(a)).\n\n2. **Estimation and evaluation of risks**: The estimation and evaluation of the risks that may emerge when the high-risk AI system is used in accordance with its intended purpose, and under conditions of reasonably foreseeable misuse (Article 9(2)(b)).\n\n3. **Evaluation of post-market monitoring data**: The evaluation of other risks possibly arising, based on the analysis of data gathered from the post-market monitoring system referred to in Article 72 (Article 9(2)(c)).\n\n4. **Adoption of risk management measures**: The adoption of appropriate and targeted risk management measures designed to address the risks identified pursuant to point (a) (Article 9(2)(d)).\n\nThe risk management system must be understood as \"a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating\" (Article 9(2)).\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": false,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Article 9",
+            "contains": [
+              "Article 9"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 4159
+          },
+          {
+            "rank": 2,
+            "label": "Recital 65",
+            "contains": [
+              "Recital 65"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 2465
+          },
+          {
+            "rank": 3,
+            "label": "Article 72",
+            "contains": [
+              "Article 72"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 2318
+          }
+        ],
+        "context_chars": 8942,
+        "citations": [
+          {
+            "citation": "Article 9(2)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 9(2)(a)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 9(2)(b)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 72",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 9(2)(c)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 9(2)(d)",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": 0.8571428571428571,
+        "bad_framing": false,
+        "cost_usd": 0.011583,
+        "latency_ms": 7528.862953186035
+      }
+    },
+    {
+      "query_id": "q003",
+      "query": "Which committee must the Commission inform before drafting implementing acts for common specifications?",
+      "is_unanswerable": false,
+      "gold_provisions": [
+        "Article 41"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 41",
+          "contains": [
+            "Article 41"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 3875
+        },
+        {
+          "rank": 2,
+          "label": "Recital 121",
+          "contains": [
+            "Recital 121"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2266
+        },
+        {
+          "rank": 3,
+          "label": "Article 98",
+          "contains": [
+            "Article 98"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 269
+        },
+        {
+          "rank": 4,
+          "label": "Recital 150",
+          "contains": [
+            "Recital 150"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 797
+        },
+        {
+          "rank": 5,
+          "label": "Article 43",
+          "contains": [
+            "Article 43"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 4936
+        }
+      ],
+      "retrieval": {
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "precision_at_5": 0.2
+      },
+      "answer": {
+        "text": "Based on the provided regulatory text, before preparing a draft implementing act for common specifications, the Commission must inform **the committee referred to in Article 22 of Regulation (EU) No 1025/2012** (Article 41(2)).\n\nThe Commission must inform this committee that it considers the conditions laid down in Article 41(1) to be fulfilled before proceeding with the draft implementing act (Article 41(2)).\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": false,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Article 41",
+            "contains": [
+              "Article 41"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 3875
+          },
+          {
+            "rank": 2,
+            "label": "Recital 121",
+            "contains": [
+              "Recital 121"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 2266
+          },
+          {
+            "rank": 3,
+            "label": "Article 43",
+            "contains": [
+              "Article 43"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 4936
+          }
+        ],
+        "context_chars": 11077,
+        "citations": [
+          {
+            "citation": "Article 41(2)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 41(1)",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": 0.6666666666666666,
+        "bad_framing": false,
+        "cost_usd": 0.010365,
+        "latency_ms": 4101.762056350708
+      }
+    },
+    {
+      "query_id": "q004",
+      "query": "What happens to common specifications once harmonised standards are published in the Official Journal?",
+      "is_unanswerable": false,
+      "gold_provisions": [
+        "Article 41"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 41",
+          "contains": [
+            "Article 41"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 3875
+        },
+        {
+          "rank": 2,
+          "label": "Article 40",
+          "contains": [
+            "Article 40"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2835
+        },
+        {
+          "rank": 3,
+          "label": "Article 32",
+          "contains": [
+            "Article 32"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 469
+        },
+        {
+          "rank": 4,
+          "label": "Recital 121",
+          "contains": [
+            "Recital 121"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2266
+        },
+        {
+          "rank": 5,
+          "label": "Article 96",
+          "contains": [
+            "Article 96"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1599
+        }
+      ],
+      "retrieval": {
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "precision_at_5": 0.2
+      },
+      "answer": {
+        "text": "According to the EU AI Act, when a reference to a harmonised standard is published in the Official Journal of the European Union, the Commission shall repeal the implementing acts establishing common specifications, or parts thereof, which cover the same requirements or obligations (Article 41(4)).\n\nThe process works as follows:\n\n1. When a harmonised standard is adopted by a European standardisation organisation and proposed to the Commission, the Commission must assess it in accordance with Regulation (EU) No 1025/2012 (Article 41(4)).\n\n2. Once the reference to that harmonised standard is published in the Official Journal of the European Union, the Commission is required to repeal the common specifications (or the relevant parts) that cover the same requirements set out in Section 2 of Chapter III or the same obligations set out in Sections 2 and 3 of Chapter V (Article 41(4)).\n\nThis mechanism ensures that harmonised standards take precedence over common specifications, with common specifications serving as a temporary fallback solution until appropriate harmonised standards become available. As noted in the regulatory context, common specifications are intended to be \"an exceptional fall back solution\" used when harmonised standards are not available or do not adequately address the requirements (Recital 121).\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": false,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Article 41",
+            "contains": [
+              "Article 41"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 3875
+          },
+          {
+            "rank": 2,
+            "label": "Article 32",
+            "contains": [
+              "Article 32"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 469
+          },
+          {
+            "rank": 3,
+            "label": "Recital 121",
+            "contains": [
+              "Recital 121"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 2266
+          }
+        ],
+        "context_chars": 6610,
+        "citations": [
+          {
+            "citation": "Article 41(4)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Recital 121",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": 0.2857142857142857,
+        "bad_framing": false,
+        "cost_usd": 0.009987,
+        "latency_ms": 7028.260707855225
+      }
+    },
+    {
+      "query_id": "q005",
+      "query": "What AI practices are prohibited under Article 5 of the EU AI Act?",
+      "is_unanswerable": false,
+      "gold_provisions": [
+        "Article 5"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 96",
+          "contains": [
+            "Article 96"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1599
+        },
+        {
+          "rank": 2,
+          "label": "Recital 28",
+          "contains": [
+            "Recital 28"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 516
+        },
+        {
+          "rank": 3,
+          "label": "Article 79",
+          "contains": [
+            "Article 79"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 5307
+        },
+        {
+          "rank": 4,
+          "label": "Recital 29",
+          "contains": [
+            "Recital 29"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 3710
+        },
+        {
+          "rank": 5,
+          "label": "Recital 157",
+          "contains": [
+            "Recital 157"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1008
+        }
+      ],
+      "retrieval": {
+        "recall_at_1": 0.0,
+        "recall_at_3": 0.0,
+        "recall_at_5": 0.0,
+        "mrr": 0.0,
+        "precision_at_5": 0.0
+      },
+      "answer": {
+        "text": "The provided regulatory text does not contain sufficient information to answer this question comprehensively. \n\nWhile the retrieved context passages discuss the rationale and principles behind prohibited AI practices in Recitals 28, 29, and 157, **the actual text of Article 5 itself is not included in the provided context**. \n\nFrom the recitals provided, I can identify the following types of AI practices that are intended to be prohibited:\n\n1. **Manipulative AI systems** that use techniques to persuade persons to engage in unwanted behaviors or deceive them in ways that subvert their autonomy, decision-making, and free choices, particularly when significant harms to physical, psychological health, or financial interests are likely to occur (Recital 29).\n\n2. **AI systems deploying subliminal components** such as audio, image, or video stimuli beyond human perception, or other manipulative/deceptive techniques that people cannot consciously perceive, control, or resist (Recital 29).\n\n3. **AI systems that exploit vulnerabilities** of persons or groups due to age, disability, or specific social or economic situations (such as extreme poverty or ethnic/religious minority status) that materially distort behavior and cause or are likely to cause significant harm (Recital 29).\n\nHowever, to provide the complete list of prohibited practices as enumerated in Article 5, you would need access to the actual text of Article 5 of the EU AI Act. The official regulatory text of Article 5 would contain the specific, legally binding prohibitions.\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": true,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Recital 28",
+            "contains": [
+              "Recital 28"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 516
+          },
+          {
+            "rank": 2,
+            "label": "Recital 29",
+            "contains": [
+              "Recital 29"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 3710
+          },
+          {
+            "rank": 3,
+            "label": "Recital 157",
+            "contains": [
+              "Recital 157"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 1008
+          }
+        ],
+        "context_chars": 5234,
+        "citations": [
+          {
+            "citation": "Article 5",
+            "status": "unsupported",
+            "grounded": false
+          },
+          {
+            "citation": "Recital 29",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": null,
+        "bad_framing": false,
+        "cost_usd": 0.009873,
+        "latency_ms": 8196.30217552185
+      }
+    },
+    {
+      "query_id": "q008",
+      "query": "As a product manager, do I need to make all information in the EU database publicly accessible when I register my AI system?",
+      "is_unanswerable": false,
+      "gold_provisions": [
+        "Article 71",
+        "Article 49"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Recital 131",
+          "contains": [
+            "Recital 131"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2747
+        },
+        {
+          "rank": 2,
+          "label": "Article 71",
+          "contains": [
+            "Article 71"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 2301
+        },
+        {
+          "rank": 3,
+          "label": "Article 49",
+          "contains": [
+            "Article 49"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 1987
+        },
+        {
+          "rank": 4,
+          "label": "Article 53",
+          "contains": [
+            "Article 53"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 3530
+        },
+        {
+          "rank": 5,
+          "label": "Article 8",
+          "contains": [
+            "Article 8"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1281
+        }
+      ],
+      "retrieval": {
+        "recall_at_1": 0.0,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 0.5,
+        "precision_at_5": 0.4
+      },
+      "answer": {
+        "text": "No, you do not need to make all information in the EU database publicly accessible when you register your AI system. The accessibility of information depends on the type of AI system and specific circumstances:\n\n**General rule for most high-risk AI systems:**\nWith certain exceptions, \"the information contained in the EU database registered in accordance with Article 49 shall be accessible and publicly available in a user-friendly manner\" (Article 71(4)). This means most registration information will be public by default.\n\n**Key exceptions where information is NOT publicly accessible:**\n\n1. **Law enforcement, migration, asylum, and border control systems:** For high-risk AI systems in these areas (points 1, 6, and 7 of Annex III), registration must be \"in a secure non-public section of the EU database\" with access limited to \"only the Commission and national authorities referred to in Article 74(8)\" (Article 49(4)).\n\n2. **Systems registered under Article 60:** Information registered under Article 60 \"shall be accessible only to market surveillance authorities and the Commission, unless the prospective provider or provider has given consent for also making the information accessible the public\" (Article 71(4)). This means you can choose whether to make this information public.\n\n3. **Critical infrastructure systems:** High-risk AI systems in critical infrastructure (point 2 of Annex III) \"shall be registered at national level\" (Article 49(5)), not in the EU database.\n\nTherefore, unless your system falls into one of these exceptions, the registration information you submit will be publicly accessible.\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": false,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Recital 131",
+            "contains": [
+              "Recital 131"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 2747
+          },
+          {
+            "rank": 2,
+            "label": "Article 71",
+            "contains": [
+              "Article 71"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 2301
+          },
+          {
+            "rank": 3,
+            "label": "Article 49",
+            "contains": [
+              "Article 49"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 1987
+          }
+        ],
+        "context_chars": 7035,
+        "citations": [
+          {
+            "citation": "Article 49",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 71(4)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Annex III",
+            "status": "cross_reference",
+            "grounded": false
+          },
+          {
+            "citation": "Article 74(8)",
+            "status": "cross_reference",
+            "grounded": false
+          },
+          {
+            "citation": "Article 49(4)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 60",
+            "status": "cross_reference",
+            "grounded": false
+          },
+          {
+            "citation": "Article 49(5)",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": 0.7,
+        "bad_framing": false,
+        "cost_usd": 0.011630999999999999,
+        "latency_ms": 8004.67324256897
+      }
+    },
+    {
+      "query_id": "q014",
+      "query": "What accuracy and robustness information do we need to document about our high-risk AI system?",
+      "is_unanswerable": false,
+      "gold_provisions": [
+        "Article 15",
+        "Article 13",
+        "Annex IV"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 15",
+          "contains": [
+            "Article 15"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 2408
+        },
+        {
+          "rank": 2,
+          "label": "Recital 74",
+          "contains": [
+            "Recital 74"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1347
+        },
+        {
+          "rank": 3,
+          "label": "Article 13",
+          "contains": [
+            "Article 13"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 3123
+        },
+        {
+          "rank": 4,
+          "label": "Recital 75",
+          "contains": [
+            "Recital 75"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1017
+        },
+        {
+          "rank": 5,
+          "label": "Annex XI",
+          "contains": [
+            "Annex XI"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 3083
+        }
+      ],
+      "retrieval": {
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "precision_at_5": 0.4
+      },
+      "answer": {
+        "text": "Based on the EU AI Act, you must document the following accuracy and robustness information for your high-risk AI system:\n\n## Required Documentation\n\n**1. Accuracy Metrics and Levels**\n- The **levels of accuracy** and **relevant accuracy metrics** must be declared in the accompanying instructions of use (Article 15(3))\n- The **level of accuracy, including its metrics**, against which the high-risk AI system has been tested and validated and which can be expected (Article 13(3)(b)(ii))\n\n**2. Robustness Information**\n- The **level of robustness** against which the system has been tested and validated (Article 13(3)(b)(ii))\n- Information about the system's resilience regarding **errors, faults or inconsistencies** that may occur within the system or its operating environment (Article 15(4))\n\n**3. Performance Circumstances and Limitations**\n- Any **known and foreseeable circumstances that may have an impact** on the expected level of accuracy, robustness and cybersecurity (Article 13(3)(b)(ii))\n- The **characteristics, capabilities and limitations of performance** of the high-risk AI system (Article 13(3)(b))\n\n**4. Design Requirements**\n- Documentation that the system is designed to achieve an **appropriate level of accuracy** and **robustness**, and performs consistently throughout its lifecycle (Article 15(1))\n- For systems that continue learning after deployment: measures to **eliminate or reduce the risk of possibly biased outputs** influencing future operations (feedback loops) (Article 15(4))\n\n**5. Format Requirements**\nAll this information must be provided in the **instructions for use** in an appropriate digital format, presented in a manner that is \"concise, complete, correct and clear\" and \"relevant, accessible and comprehensible to deployers\" (Article 13(2)).\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": false,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Article 15",
+            "contains": [
+              "Article 15"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 2408
+          },
+          {
+            "rank": 2,
+            "label": "Recital 74",
+            "contains": [
+              "Recital 74"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 1347
+          },
+          {
+            "rank": 3,
+            "label": "Article 13",
+            "contains": [
+              "Article 13"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 3123
+          }
+        ],
+        "context_chars": 6878,
+        "citations": [
+          {
+            "citation": "Article 15(3)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 13(3)(b)(ii)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 15(4)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 13(3)(b)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 15(1)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 13(2)",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": 0.8571428571428571,
+        "bad_framing": false,
+        "cost_usd": 0.012294,
+        "latency_ms": 9987.071990966797
+      }
+    },
+    {
+      "query_id": "q018",
+      "query": "What is the purpose of AI regulatory sandboxes according to the EU AI Act?",
+      "is_unanswerable": false,
+      "gold_provisions": [
+        "Article 57"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Recital 139",
+          "contains": [
+            "Recital 139"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 3288
+        },
+        {
+          "rank": 2,
+          "label": "Article 59",
+          "contains": [
+            "Article 59"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 4374
+        },
+        {
+          "rank": 3,
+          "label": "Article 58",
+          "contains": [
+            "Article 58"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 4732
+        },
+        {
+          "rank": 4,
+          "label": "Article 57",
+          "contains": [
+            "Article 57"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 9144
+        },
+        {
+          "rank": 5,
+          "label": "Recital 138",
+          "contains": [
+            "Recital 138"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1285
+        }
+      ],
+      "retrieval": {
+        "recall_at_1": 0.0,
+        "recall_at_3": 0.0,
+        "recall_at_5": 1.0,
+        "mrr": 0.25,
+        "precision_at_5": 0.2
+      },
+      "answer": {
+        "text": "According to the EU AI Act, AI regulatory sandboxes serve multiple interconnected purposes:\n\n## Primary Objectives\n\nThe objectives of AI regulatory sandboxes are to:\n\n1. **Foster AI innovation** by establishing a controlled experimentation and testing environment in the development and pre-marketing phase with a view to ensuring compliance of innovative AI systems with the Regulation and other relevant Union and national law (Recital 139).\n\n2. **Enhance legal certainty** for innovators and the competent authorities' oversight and understanding of the opportunities, emerging risks and the impacts of AI use (Recital 139).\n\n3. **Facilitate regulatory learning** for authorities and undertakings, including with a view to future adaptations of the legal framework (Recital 139).\n\n4. **Support cooperation and the sharing of best practices** with the authorities involved in the AI regulatory sandbox (Recital 139).\n\n5. **Accelerate access to markets**, including by removing barriers for SMEs, including start-ups (Recital 139).\n\n## Broader Purpose\n\nMore broadly, AI regulatory sandboxes are intended to provide \"regulatory oversight and a safe and controlled space for experimentation, while ensuring responsible innovation and integration of appropriate safeguards and risk mitigation measures\" (Recital 138). They facilitate \"the development and testing of innovative AI systems under strict regulatory oversight before these systems are placed on the market or otherwise put into service\" (Recital 138).\n\nThe sandboxes should be widely available throughout the Union, with particular attention given to their accessibility for SMEs, including start-ups (Recital 139).\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": false,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Recital 139",
+            "contains": [
+              "Recital 139"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 3288
+          },
+          {
+            "rank": 2,
+            "label": "Article 58",
+            "contains": [
+              "Article 58"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 4732
+          },
+          {
+            "rank": 3,
+            "label": "Recital 138",
+            "contains": [
+              "Recital 138"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 1285
+          }
+        ],
+        "context_chars": 9305,
+        "citations": [
+          {
+            "citation": "Recital 139",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Recital 138",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": 0.2,
+        "bad_framing": false,
+        "cost_usd": 0.012261000000000001,
+        "latency_ms": 10080.921173095703
+      }
+    },
+    {
+      "query_id": "q020",
+      "query": "We're a hardware manufacturer integrating AI into our products. What's our role under the AI Act - are we considered providers?",
+      "is_unanswerable": false,
+      "gold_provisions": [
+        "Article 25",
+        "Article 3(3)"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 25",
+          "contains": [
+            "Article 25"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 3976
+        },
+        {
+          "rank": 2,
+          "label": "Recital 87",
+          "contains": [
+            "Recital 87"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 537
+        },
+        {
+          "rank": 3,
+          "label": "Recital 64",
+          "contains": [
+            "Recital 64"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2760
+        },
+        {
+          "rank": 4,
+          "label": "Recital 82",
+          "contains": [
+            "Recital 82"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 846
+        },
+        {
+          "rank": 5,
+          "label": "Recital 83",
+          "contains": [
+            "Recital 83"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 696
+        }
+      ],
+      "retrieval": {
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "precision_at_5": 0.2
+      },
+      "answer": {
+        "text": "Based on the EU AI Act, as a hardware manufacturer integrating AI into your products, **you would be considered a provider of the high-risk AI system** under specific circumstances outlined in Article 25(3).\n\nSpecifically, if you manufacture products covered by the Union harmonisation legislation listed in Section A of Annex I, and the AI system is a safety component of those products, you are considered the provider of the high-risk AI system under either of these conditions:\n\n1. \"The high-risk AI system is placed on the market together with the product under the name or trademark of the product manufacturer\" (Article 25(3)(a)), or\n\n2. \"The high-risk AI system is put into service under the name or trademark of the product manufacturer after the product has been placed on the market\" (Article 25(3)(b))\n\nAs the provider, you would be \"subject to the obligations under Article 16\" (Article 25(3)), which sets out provider obligations for high-risk AI systems.\n\nAdditionally, if you are integrating AI systems supplied by third parties, Article 25(4) requires that you and the third-party supplier \"by written agreement, specify the necessary information, capabilities, technical access and other assistance based on the generally acknowledged state of the art, in order to enable the provider of the high-risk AI system to fully comply with the obligations set out in this Regulation.\"\n\n**Important note:** The provided regulatory text does not contain the full details of Section A of Annex I or Article 16. To determine definitively whether your specific products fall under these provisions and what exact obligations apply, you would need to review those sections of the regulation.\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": false,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Article 25",
+            "contains": [
+              "Article 25"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 3976
+          },
+          {
+            "rank": 2,
+            "label": "Recital 82",
+            "contains": [
+              "Recital 82"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 846
+          },
+          {
+            "rank": 3,
+            "label": "Recital 83",
+            "contains": [
+              "Recital 83"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 696
+          }
+        ],
+        "context_chars": 5518,
+        "citations": [
+          {
+            "citation": "Article 25(3)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Annex I",
+            "status": "cross_reference",
+            "grounded": false
+          },
+          {
+            "citation": "Article 25(3)(a)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 25(3)(b)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 16",
+            "status": "cross_reference",
+            "grounded": false
+          },
+          {
+            "citation": "Article 25(4)",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": 0.8571428571428571,
+        "bad_framing": false,
+        "cost_usd": 0.010515,
+        "latency_ms": 8201.051712036133
+      }
+    },
+    {
+      "query_id": "q026",
+      "query": "What quality management requirements apply to providers of high-risk AI systems?",
+      "is_unanswerable": false,
+      "gold_provisions": [
+        "Article 17"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Recital 66",
+          "contains": [
+            "Recital 66"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 533
+        },
+        {
+          "rank": 2,
+          "label": "Recital 81",
+          "contains": [
+            "Recital 81"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1141
+        },
+        {
+          "rank": 3,
+          "label": "Article 16",
+          "contains": [
+            "Article 16"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1651
+        },
+        {
+          "rank": 4,
+          "label": "Article 17",
+          "contains": [
+            "Article 17"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 3647
+        },
+        {
+          "rank": 5,
+          "label": "Article 8",
+          "contains": [
+            "Article 8"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1281
+        }
+      ],
+      "retrieval": {
+        "recall_at_1": 0.0,
+        "recall_at_3": 0.0,
+        "recall_at_5": 1.0,
+        "mrr": 0.25,
+        "precision_at_5": 0.2
+      },
+      "answer": {
+        "text": "# Quality Management Requirements for Providers of High-Risk AI Systems\n\nProviders of high-risk AI systems must put a quality management system in place that ensures compliance with the EU AI Act (Article 17(1)). This is a mandatory obligation listed under Article 16(c).\n\n## Core Components Required\n\nThe quality management system must be documented in a systematic and orderly manner in the form of written policies, procedures and instructions, and must include at least the following aspects (Article 17(1)):\n\n1. **Regulatory compliance strategy**, including conformity assessment procedures and procedures for managing modifications to the high-risk AI system (Article 17(1)(a))\n\n2. **Design processes**: techniques, procedures and systematic actions for design, design control and design verification (Article 17(1)(b))\n\n3. **Development and quality assurance**: techniques, procedures and systematic actions for development, quality control and quality assurance (Article 17(1)(c))\n\n4. **Testing and validation**: examination, test and validation procedures before, during and after development, including their frequency (Article 17(1)(d))\n\n5. **Technical specifications**: standards to be applied and means to ensure compliance where harmonised standards are not fully applied (Article 17(1)(e))\n\n6. **Data management systems**: procedures for data acquisition, collection, analysis, labelling, storage, filtration, mining, aggregation, retention and other data operations (Article 17(1)(f))\n\n7. **Risk management system** as referred to in Article 9 (Article 17(1)(g))\n\n8. **Post-market monitoring system** in accordance with Article 72 (Article 17(1)(h))\n\n9. **Serious incident reporting procedures** in accordance with Article 73 (Article 17(1)(i))\n\n10. **Communication handling**: procedures for communication with national competent authorities, data providers, notified bodies, operators, customers and other interested parties (Article 17(1)(j))\n\n11. **Record-keeping**: systems and procedures for maintaining all relevant documentation and information (Article 17(1)(k))\n\n12. **Resource management**, including security-of-supply measures (Article 17(1)(l))\n\n13. **Accountability framework**: setting out management and staff responsibilities for all the above aspects (Article 17(1)(m))\n\n## Proportionality and Special Cases\n\nThe implementation must be proportionate to the size of the provider's organisation, while still respecting the degree of rigour and level of protection required for compliance (Article 17(2)).\n\nProviders already subject to quality management obligations under relevant sectoral Union law may include these aspects as part of their existing quality management systems (Article 17(3), Recital 81).\n\nFor financial institutions subject to internal governance requirements under Union financial services law, compliance with those rules fulfils the quality management obligation, except for the risk management system, post-market monitoring system, and serious incident reporting procedures (Article 17(4)).\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": false,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Recital 81",
+            "contains": [
+              "Recital 81"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 1141
+          },
+          {
+            "rank": 2,
+            "label": "Article 16",
+            "contains": [
+              "Article 16"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 1651
+          },
+          {
+            "rank": 3,
+            "label": "Article 17",
+            "contains": [
+              "Article 17"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 3647
+          }
+        ],
+        "context_chars": 6439,
+        "citations": [
+          {
+            "citation": "Article 17(1)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 16(c)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 17(1)(a)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 17(1)(b)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 17(1)(c)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 17(1)(d)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 17(1)(e)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 17(1)(f)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 9",
+            "status": "cross_reference",
+            "grounded": false
+          },
+          {
+            "citation": "Article 17(1)(g)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 72",
+            "status": "cross_reference",
+            "grounded": false
+          },
+          {
+            "citation": "Article 17(1)(h)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 73",
+            "status": "cross_reference",
+            "grounded": false
+          },
+          {
+            "citation": "Article 17(1)(i)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 17(1)(j)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 17(1)(k)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 17(1)(l)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 17(1)(m)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 17(2)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 17(3)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Recital 81",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 17(4)",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": 1.0,
+        "bad_framing": false,
+        "cost_usd": 0.015525,
+        "latency_ms": 11802.848100662231
+      }
+    },
+    {
+      "query_id": "q030",
+      "query": "What are the AI literacy requirements for providers and deployers under the EU AI Act?",
+      "is_unanswerable": false,
+      "gold_provisions": [
+        "Article 4",
+        "Article 3(56)"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 4",
+          "contains": [
+            "Article 4"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 465
+        },
+        {
+          "rank": 2,
+          "label": "Article 3(56)",
+          "contains": [
+            "Article 3(56)"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 378
+        },
+        {
+          "rank": 3,
+          "label": "Recital 20",
+          "contains": [
+            "Recital 20"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1688
+        },
+        {
+          "rank": 4,
+          "label": "Recital 165",
+          "contains": [
+            "Recital 165"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2176
+        },
+        {
+          "rank": 5,
+          "label": "Recital 91",
+          "contains": [
+            "Recital 91"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1063
+        }
+      ],
+      "retrieval": {
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "precision_at_5": 0.4
+      },
+      "answer": {
+        "text": "# AI Literacy Requirements for Providers and Deployers\n\nUnder the EU AI Act, providers and deployers of AI systems have specific obligations regarding AI literacy:\n\n## Core Obligation\n\nProviders and deployers must \"take measures to ensure, to their best extent, a sufficient level of AI literacy of their staff and other persons dealing with the operation and use of AI systems on their behalf\" (Article 4).\n\n## Scope of AI Literacy\n\nAI literacy is defined as \"skills, knowledge and understanding that allow providers, deployers and affected persons, taking into account their respective rights and obligations in the context of this Regulation, to make an informed deployment of AI systems, as well as to gain awareness about the opportunities and risks of AI and possible harm it can cause\" (Article 3(56)).\n\n## Contextual Factors\n\nWhen implementing AI literacy measures, providers and deployers must take into account:\n- Technical knowledge of their staff\n- Experience\n- Education and training\n- The context in which the AI systems are to be used\n- The persons or groups of persons on whom the AI systems are to be used (Article 4)\n\n## Content Areas\n\nAI literacy should equip providers and deployers with notions that \"may vary with regard to the relevant context\" and can include:\n- Understanding the correct application of technical elements during the AI system's development phase\n- The measures to be applied during the system's use\n- The suitable ways to interpret the AI system's output\n- Insights required to ensure appropriate compliance and correct enforcement (Recital 20)\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": false,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Article 4",
+            "contains": [
+              "Article 4"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 465
+          },
+          {
+            "rank": 2,
+            "label": "Article 3(56)",
+            "contains": [
+              "Article 3(56)"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 378
+          },
+          {
+            "rank": 3,
+            "label": "Recital 20",
+            "contains": [
+              "Recital 20"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 1688
+          }
+        ],
+        "context_chars": 2531,
+        "citations": [
+          {
+            "citation": "Article 4",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 3(56)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Recital 20",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": 0.75,
+        "bad_framing": false,
+        "cost_usd": 0.008184,
+        "latency_ms": 6221.062898635864
+      }
+    },
+    {
+      "query_id": "q032",
+      "query": "If the European Parliament decides to extend the review period for a delegated act under Article 51(3), what is the maximum total time before the act can enter into force assuming no objections?",
+      "is_unanswerable": false,
+      "gold_provisions": [
+        "Article 97"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 97",
+          "contains": [
+            "Article 97"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 2402
+        },
+        {
+          "rank": 2,
+          "label": "Article 112",
+          "contains": [
+            "Article 112"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 5628
+        },
+        {
+          "rank": 3,
+          "label": "Article 106",
+          "contains": [
+            "Article 106"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 946
+        },
+        {
+          "rank": 4,
+          "label": "Article 108",
+          "contains": [
+            "Article 108"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2634
+        },
+        {
+          "rank": 5,
+          "label": "Article 36",
+          "contains": [
+            "Article 36"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 6509
+        }
+      ],
+      "retrieval": {
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "precision_at_5": 0.2
+      },
+      "answer": {
+        "text": "Based on the provided regulatory text, if the European Parliament decides to extend the review period for a delegated act under Article 51(3), the maximum total time before the act can enter into force would be **six months**, assuming no objections are raised.\n\nHere's how this works:\n\n1. **Standard review period**: When the Commission adopts a delegated act pursuant to Article 51(3), it \"shall enter into force only if no objection has been expressed by either the European Parliament or the Council within a period of three months of notification\" (Article 97(6)).\n\n2. **Extension provision**: \"That period shall be extended by three months at the initiative of the European Parliament or of the Council\" (Article 97(6)).\n\nTherefore, the calculation is:\n- Initial review period: 3 months\n- Possible extension: +3 months\n- **Maximum total review period: 6 months**\n\nIf neither the European Parliament nor the Council objects within this maximum six-month period, the delegated act would then enter into force (Article 97(6)).\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": false,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Article 97",
+            "contains": [
+              "Article 97"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 2402
+          },
+          {
+            "rank": 2,
+            "label": "Article 112",
+            "contains": [
+              "Article 112"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 5628
+          },
+          {
+            "rank": 3,
+            "label": "Article 36",
+            "contains": [
+              "Article 36"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 6509
+          }
+        ],
+        "context_chars": 14539,
+        "citations": [
+          {
+            "citation": "Article 51(3)",
+            "status": "cross_reference",
+            "grounded": false
+          },
+          {
+            "citation": "Article 97(6)",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": 0.3333333333333333,
+        "bad_framing": false,
+        "cost_usd": 0.014682,
+        "latency_ms": 6574.091911315918
+      }
+    },
+    {
+      "query_id": "q037",
+      "query": "Do I need to train my employees on AI if we're deploying an AI system in our company?",
+      "is_unanswerable": false,
+      "gold_provisions": [
+        "Article 4",
+        "Article 26"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 4",
+          "contains": [
+            "Article 4"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 465
+        },
+        {
+          "rank": 2,
+          "label": "Recital 91",
+          "contains": [
+            "Recital 91"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1063
+        },
+        {
+          "rank": 3,
+          "label": "Article 53",
+          "contains": [
+            "Article 53"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 3530
+        },
+        {
+          "rank": 4,
+          "label": "Recital 57",
+          "contains": [
+            "Recital 57"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1332
+        },
+        {
+          "rank": 5,
+          "label": "Article 44",
+          "contains": [
+            "Article 44"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1452
+        }
+      ],
+      "retrieval": {
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "precision_at_5": 0.2
+      },
+      "answer": {
+        "text": "Yes, you need to ensure AI literacy training for relevant personnel when deploying an AI system in your company.\n\nAccording to the EU AI Act, \"Providers and deployers of AI systems shall take measures to ensure, to their best extent, a sufficient level of AI literacy of their staff and other persons dealing with the operation and use of AI systems on their behalf\" (Article 4).\n\nThis training obligation should be tailored based on several factors:\n- The technical knowledge, experience, education and training of the staff\n- The context in which the AI systems will be used\n- The persons or groups of persons on whom the AI systems will be used (Article 4)\n\nThe requirement applies to both your direct staff and \"other persons dealing with the operation and use of AI systems on their behalf,\" meaning it extends beyond just employees to anyone operating or using the system for your organization (Article 4).\n\nThe regulation requires you to take these measures \"to their best extent,\" indicating a proportionate approach based on your organization's capabilities and the specific circumstances of the AI system deployment (Article 4).\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": false,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Article 4",
+            "contains": [
+              "Article 4"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 465
+          },
+          {
+            "rank": 2,
+            "label": "Article 53",
+            "contains": [
+              "Article 53"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 3530
+          },
+          {
+            "rank": 3,
+            "label": "Recital 57",
+            "contains": [
+              "Recital 57"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 1332
+          }
+        ],
+        "context_chars": 5327,
+        "citations": [
+          {
+            "citation": "Article 4",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": 0.2,
+        "bad_framing": false,
+        "cost_usd": 0.00849,
+        "latency_ms": 8803.998947143555
+      }
+    },
+    {
+      "query_id": "q044",
+      "query": "Our startup is developing a high-risk AI system. Are there any simplified documentation options available for small companies?",
+      "is_unanswerable": false,
+      "gold_provisions": [
+        "Article 11"
+      ],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 11",
+          "contains": [
+            "Article 11"
+          ],
+          "contains_count": 1,
+          "relevant": true,
+          "chars": 1825
+        },
+        {
+          "rank": 2,
+          "label": "Recital 146",
+          "contains": [
+            "Recital 146"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 657
+        },
+        {
+          "rank": 3,
+          "label": "Recital 71",
+          "contains": [
+            "Recital 71"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1109
+        },
+        {
+          "rank": 4,
+          "label": "Article 25",
+          "contains": [
+            "Article 25"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 3976
+        },
+        {
+          "rank": 5,
+          "label": "Recital 53",
+          "contains": [
+            "Recital 53"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 4448
+        }
+      ],
+      "retrieval": {
+        "recall_at_1": 1.0,
+        "recall_at_3": 1.0,
+        "recall_at_5": 1.0,
+        "mrr": 1.0,
+        "precision_at_5": 0.2
+      },
+      "answer": {
+        "text": "Yes, the EU AI Act provides simplified documentation options specifically for small companies developing high-risk AI systems.\n\n**Simplified Technical Documentation for SMEs:**\n\nAccording to Article 11(1), \"SMEs, including start-ups, may provide the elements of the technical documentation specified in Annex IV in a simplified manner.\" To facilitate this, \"the Commission shall establish a simplified technical documentation form targeted at the needs of small and microenterprises\" (Article 11(1)). \n\nWhen your startup opts to use this simplified approach, you must use the Commission's standardized form, and importantly, \"notified bodies shall accept the form for the purposes of the conformity assessment\" (Article 11(1)).\n\n**Simplified Quality Management System for Microenterprises:**\n\nIf your startup qualifies as a microenterprise, there is an additional simplification available. The regulation allows microenterprises \"to fulfil one of the most costly obligations, namely to establish a quality management system, in a simplified manner which would reduce the administrative burden and the costs for those enterprises without affecting the level of protection and the need for compliance with the requirements for high-risk AI systems\" (Recital 146). The Commission is tasked with developing \"guidelines to specify the elements of the quality management system to be fulfilled in this simplified manner by microenterprises\" (Recital 146).\n\n**Important Note:**\n\nWhile these simplifications reduce administrative burden and costs, they do not lower the compliance standards—your high-risk AI system must still meet all the requirements set out in the regulation.\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": false,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Article 11",
+            "contains": [
+              "Article 11"
+            ],
+            "contains_count": 1,
+            "relevant": true,
+            "chars": 1825
+          },
+          {
+            "rank": 2,
+            "label": "Recital 146",
+            "contains": [
+              "Recital 146"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 657
+          },
+          {
+            "rank": 3,
+            "label": "Article 25",
+            "contains": [
+              "Article 25"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 3976
+          }
+        ],
+        "context_chars": 6458,
+        "citations": [
+          {
+            "citation": "Article 11(1)",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Annex IV",
+            "status": "cross_reference",
+            "grounded": false
+          },
+          {
+            "citation": "Recital 146",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": 0.375,
+        "bad_framing": false,
+        "cost_usd": 0.010824,
+        "latency_ms": 9314.810037612915
+      }
+    },
+    {
+      "query_id": "u07",
+      "query": "Which national authority has Norway designated as its market surveillance authority for the AI Act?",
+      "is_unanswerable": true,
+      "gold_provisions": [],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 70",
+          "contains": [
+            "Article 70"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 3625
+        },
+        {
+          "rank": 2,
+          "label": "Recital 156",
+          "contains": [
+            "Recital 156"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1359
+        },
+        {
+          "rank": 3,
+          "label": "Article 74",
+          "contains": [
+            "Article 74"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 7054
+        },
+        {
+          "rank": 4,
+          "label": "Recital 153",
+          "contains": [
+            "Recital 153"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 880
+        },
+        {
+          "rank": 5,
+          "label": "Article 80",
+          "contains": [
+            "Article 80"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2735
+        }
+      ],
+      "answer": {
+        "text": "The provided regulatory text does not contain sufficient information to answer this question.\n\nThe EU AI Act requires each Member State to designate market surveillance authorities and communicate their identity to the Commission (Article 70(2)), and Member States must make publicly available information on how these authorities can be contacted by 2 August 2025 (Article 70(2)). However, the regulatory text itself does not list which specific authorities individual Member States, including Norway, have designated.\n\nAdditionally, it's important to note that Norway is not an EU Member State, though it may be part of the European Economic Area (EEA). The applicability of the EU AI Act to Norway and any designation of authorities would depend on EEA agreements and Norway's implementation decisions, which are not addressed in the provided regulatory text.\n\nTo find information about Norway's designated market surveillance authority for AI Act purposes, you would need to consult:\n- Official notifications from Norway to the European Commission (if applicable under EEA arrangements)\n- Norway's national implementation legislation\n- The publicly available list of single points of contact that the Commission is required to maintain (Article 70(2))\n- Direct contact with Norwegian regulatory authorities\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": true,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Article 70",
+            "contains": [
+              "Article 70"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 3625
+          },
+          {
+            "rank": 2,
+            "label": "Recital 156",
+            "contains": [
+              "Recital 156"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 1359
+          },
+          {
+            "rank": 3,
+            "label": "Article 74",
+            "contains": [
+              "Article 74"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 7054
+          }
+        ],
+        "context_chars": 12038,
+        "citations": [
+          {
+            "citation": "Article 70(2)",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": null,
+        "bad_framing": false,
+        "cost_usd": 0.012753,
+        "latency_ms": 8248.741865158081
+      }
+    },
+    {
+      "query_id": "u08",
+      "query": "How much does it cost to register a high-risk AI system in the EU database?",
+      "is_unanswerable": true,
+      "gold_provisions": [],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 49",
+          "contains": [
+            "Article 49"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1987
+        },
+        {
+          "rank": 2,
+          "label": "Recital 131",
+          "contains": [
+            "Recital 131"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2747
+        },
+        {
+          "rank": 3,
+          "label": "Article 71",
+          "contains": [
+            "Article 71"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2301
+        },
+        {
+          "rank": 4,
+          "label": "Article 80",
+          "contains": [
+            "Article 80"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 2735
+        },
+        {
+          "rank": 5,
+          "label": "Recital 53",
+          "contains": [
+            "Recital 53"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 4448
+        }
+      ],
+      "answer": {
+        "text": "The provided regulatory text does not contain sufficient information to answer this question about the cost of registration in the EU database.\n\nWhile the EU AI Act establishes registration requirements for high-risk AI systems in Article 49 and describes the EU database in Article 71, none of the retrieved passages specify any fees or costs associated with registration.\n\nThe only reference to cost-related matters states that \"This section of the EU database should be publicly accessible, free of charge\" (Recital 131), but this refers to public access to view the database information, not to the registration process itself.\n\nTo find information about registration fees (if any exist), you would need to consult:\n- Implementing acts or delegated acts that may specify administrative fees\n- National implementation measures in specific Member States\n- Official guidance documents from the European Commission regarding the EU database operational procedures\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": true,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Article 49",
+            "contains": [
+              "Article 49"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 1987
+          },
+          {
+            "rank": 2,
+            "label": "Recital 131",
+            "contains": [
+              "Recital 131"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 2747
+          },
+          {
+            "rank": 3,
+            "label": "Article 71",
+            "contains": [
+              "Article 71"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 2301
+          }
+        ],
+        "context_chars": 7035,
+        "citations": [
+          {
+            "citation": "Article 49",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 71",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Recital 131",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": null,
+        "bad_framing": false,
+        "cost_usd": 0.009165,
+        "latency_ms": 6811.347961425781
+      }
+    },
+    {
+      "query_id": "u09",
+      "query": "What changes did the 2026 Digital Omnibus make to the AI Act?",
+      "is_unanswerable": true,
+      "gold_provisions": [],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 111",
+          "contains": [
+            "Article 111"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1609
+        },
+        {
+          "rank": 2,
+          "label": "Recital 179",
+          "contains": [
+            "Recital 179"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1524
+        },
+        {
+          "rank": 3,
+          "label": "Article 110",
+          "contains": [
+            "Article 110"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 620
+        },
+        {
+          "rank": 4,
+          "label": "Annex VII",
+          "contains": [
+            "Annex VII"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 7936
+        },
+        {
+          "rank": 5,
+          "label": "Article 105",
+          "contains": [
+            "Article 105"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 1004
+        }
+      ],
+      "answer": {
+        "text": "The provided regulatory text does not contain sufficient information to answer this question.\n\nThe retrieved passages discuss the EU AI Act (Regulation (EU) 2024/1689) itself, including transitional provisions for AI systems already on the market (Article 111), application dates (Recital 179), and an amendment to Directive (EU) 2020/1828 (Article 110). However, there is no mention of a \"2026 Digital Omnibus\" or any amendments made by such an instrument to the AI Act.\n\nTo find information about changes made by a 2026 Digital Omnibus to the AI Act, you would need to consult:\n- The text of the Digital Omnibus regulation or directive itself\n- Official EU legislative documents showing amendments to Regulation (EU) 2024/1689\n- Consolidated versions of the AI Act that incorporate subsequent amendments\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": true,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Article 111",
+            "contains": [
+              "Article 111"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 1609
+          },
+          {
+            "rank": 2,
+            "label": "Recital 179",
+            "contains": [
+              "Recital 179"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 1524
+          },
+          {
+            "rank": 3,
+            "label": "Article 110",
+            "contains": [
+              "Article 110"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 620
+          }
+        ],
+        "context_chars": 3753,
+        "citations": [
+          {
+            "citation": "Article 111",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Recital 179",
+            "status": "retrieved",
+            "grounded": true
+          },
+          {
+            "citation": "Article 110",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": null,
+        "bad_framing": false,
+        "cost_usd": 0.007515,
+        "latency_ms": 6380.633115768433
+      }
+    },
+    {
+      "query_id": "u10",
+      "query": "Which AI systems did the Commission add to Annex III in its first delegated act amending the list?",
+      "is_unanswerable": true,
+      "gold_provisions": [],
+      "retrieved": [
+        {
+          "rank": 1,
+          "label": "Article 7",
+          "contains": [
+            "Article 7"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 3561
+        },
+        {
+          "rank": 2,
+          "label": "Article 103",
+          "contains": [
+            "Article 103"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 921
+        },
+        {
+          "rank": 3,
+          "label": "Article 104",
+          "contains": [
+            "Article 104"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 921
+        },
+        {
+          "rank": 4,
+          "label": "Article 106",
+          "contains": [
+            "Article 106"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 946
+        },
+        {
+          "rank": 5,
+          "label": "Article 6",
+          "contains": [
+            "Article 6"
+          ],
+          "contains_count": 1,
+          "relevant": false,
+          "chars": 4041
+        }
+      ],
+      "answer": {
+        "text": "The provided regulatory text does not contain sufficient information to answer this question.\n\nThe retrieved passages describe the **procedural framework** for how the Commission may amend Annex III (Article 7), including the conditions and criteria that must be met before adding or modifying high-risk AI system use-cases. However, these passages do not contain information about any **actual delegated acts** that the Commission has already adopted, nor do they specify which AI systems, if any, have been added to Annex III through such acts.\n\nTo find this information, you would need to consult:\n- Official publications of delegated acts adopted by the Commission under Article 7 of the EU AI Act\n- The Official Journal of the European Union (OJ) where such delegated acts would be published\n- The current version of Annex III as amended by any adopted delegated acts\n\n⚠️ This is informational support for regulatory research only, not legal advice. Consult qualified legal counsel for compliance decisions.",
+        "declined": true,
+        "context": [
+          {
+            "rank": 1,
+            "label": "Article 7",
+            "contains": [
+              "Article 7"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 3561
+          },
+          {
+            "rank": 2,
+            "label": "Article 103",
+            "contains": [
+              "Article 103"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 921
+          },
+          {
+            "rank": 3,
+            "label": "Article 6",
+            "contains": [
+              "Article 6"
+            ],
+            "contains_count": 1,
+            "relevant": false,
+            "chars": 4041
+          }
+        ],
+        "context_chars": 8523,
+        "citations": [
+          {
+            "citation": "Annex III",
+            "status": "cross_reference",
+            "grounded": false
+          },
+          {
+            "citation": "Article 7",
+            "status": "retrieved",
+            "grounded": true
+          }
+        ],
+        "citation_completeness": null,
+        "bad_framing": false,
+        "cost_usd": 0.010626,
+        "latency_ms": 6662.813901901245
+      }
+    }
+  ]
+}

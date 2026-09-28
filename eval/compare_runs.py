@@ -52,8 +52,8 @@ def main() -> None:
 
     first = summaries[0]
     print(
-        f"{args.split} split: {first['n_answerable']} answerable, "
-        f"{first['n_unanswerable']} unanswerable questions\n"
+        f"{first['n_answerable']} answerable and {first['n_unanswerable']} unanswerable "
+        f"questions ({args.split} split).\n"
     )
     print("| Metric | " + " | ".join(args.tags) + " |")
     print("|---|" + "---|" * len(args.tags))
