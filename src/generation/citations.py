@@ -30,10 +30,12 @@ _OTHER_ACT = re.compile(
 _REFERENCE = re.compile(r"^(Article|Annex|Recital)\s+(\d+|[IVXLC]+)(.*)$", re.IGNORECASE)
 _PATH_PART = re.compile(r"\((\d+|[a-z]{1,4})\)|Section\s+(\w+)", re.IGNORECASE)
 
-# The sentence the system prompt tells the model to use when the context cannot answer
+# The sentence the system prompt tells the model to use when the context cannot answer,
+# and how far into the answer it must start for the answer to count as a decline
 _DECLINE_PATTERN = re.compile(
     r"does not contain (sufficient|enough) information to answer", re.IGNORECASE
 )
+_DECLINE_WITHIN = 120
 
 # Banned phrases indicating bad framing (the LLM thinks the user provided the docs)
 _BAD_FRAMING_PATTERNS = [
@@ -141,8 +143,12 @@ def verify_citations(
 
 
 def detect_decline(answer: str) -> bool:
-    """Return True if the answer uses the system prompt's decline sentence."""
-    return bool(_DECLINE_PATTERN.search(answer))
+    """Return True if the answer opens with the system prompt's decline sentence.
+
+    A decline leads with the sentence. An answer that uses it later, to say one
+    part of the question is not covered, is a partial answer, not a decline.
+    """
+    return bool(_DECLINE_PATTERN.search(answer.lstrip()[:_DECLINE_WITHIN]))
 
 
 def detect_bad_framing(answer: str) -> bool:

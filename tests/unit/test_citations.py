@@ -160,6 +160,15 @@ class TestDetectDecline:
         answer = "Providers must establish a risk management system (Article 9(1))."
         assert detect_decline(answer) is False
 
+    def test_partial_answer_with_caveat_is_not_a_decline(self):
+        answer = (
+            "Article 19 applies to providers and Article 26(6) to deployers, who keep logs "
+            "to the extent they are under their control (Article 26(6)). " * 5
+            + "The provided regulatory text does not contain sufficient information to answer "
+            "how cloud contracts allocate that control."
+        )
+        assert detect_decline(answer) is False
+
 
 class TestDetectBadFraming:
     def test_detects_bad_framing(self):
