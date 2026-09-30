@@ -36,7 +36,7 @@ Baseline against the final system, on the same 54 questions (17 test, 37 dev) wi
 | Recall@3 | 1.00 / 0.94 | 1.00 / 0.81 |
 | Cost per question | $0.011 / $0.015 | $0.012 / $0.012 |
 
-Passages are matched to provisions by their text, not their labels, so a mislabelled passage cannot count as a hit. Judges are Claude Haiku 4.5. How the golden set was built: [docs/golden_dataset_methodology.md](docs/golden_dataset_methodology.md).
+Passages are matched to provisions by their text, not their labels, so a mislabeled passage cannot count as a hit. Judges are Claude Haiku 4.5. How the golden set was built: [docs/golden_dataset_methodology.md](docs/golden_dataset_methodology.md).
 
 ## Run it
 
