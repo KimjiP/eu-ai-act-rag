@@ -11,7 +11,7 @@ A: 'AI literacy' means skills, knowledge and understanding that allow providers,
 deployers and affected persons [...] (Article 3(56)). [...] Providers and deployers
 must take measures to ensure a sufficient level of AI literacy of their staff (Article 4).
 
-Citation check: Article 3(56) ✓, Recital 20 ✓, Article 4 ✓
+Citation check: Article 3(56) ✓, Article 4 ✓
 ```
 
 ## How it works
